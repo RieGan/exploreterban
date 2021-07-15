@@ -2,7 +2,7 @@ const settings = {
   "name": "frontend",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
+      "url": "http://20.198.224.242",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -45,7 +45,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "http://20.198.224.242"
         }
       }
     },
