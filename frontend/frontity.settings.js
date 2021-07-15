@@ -66,6 +66,13 @@ const settings = {
       state: {
         source: {
           url: "http://20.198.224.242",
+          postTypes: [
+            {
+              type: "product", // type slug
+              endpoint: "product", // REST API endpoint
+              archive: "/product", // link where this custom posts are listed
+            },
+          ],
         },
       },
     },
