@@ -1,31 +1,20 @@
+import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
 
-/**
- * Navigation Component
- *
- * It renders the navigation links
- */
 const Nav = ({ state }) => (
-  <NavContainer>
-    {state.theme.menu.map(([name, link]) => {
-      // Check if the link matched the current page url
-      const isCurrentPage = state.router.link === link;
-      return (
-        <NavItem key={name}>
-          {/* If link url is the current page, add `aria-current` for a11y */}
-          <Link link={link} aria-current={isCurrentPage ? "page" : undefined}>
-            {name}
-          </Link>
-        </NavItem>
-      );
-    })}
-  </NavContainer>
+  <Container>
+    {state.theme.menu.map(([name, link]) => (
+      <Item key={name} isSelected={state.router.link === link}>
+        <Link link={link}>{name}</Link>
+      </Item>
+    ))}
+  </Container>
 );
 
 export default connect(Nav);
 
-const NavContainer = styled.nav`
+const Container = styled.nav`
   list-style: none;
   display: flex;
   width: 848px;
@@ -34,13 +23,9 @@ const NavContainer = styled.nav`
   padding: 0 24px;
   margin: 0;
   overflow-x: auto;
-
-  @media screen and (max-width: 560px) {
-    display: none;
-  }
 `;
 
-const NavItem = styled.div`
+const Item = styled.div`
   padding: 0;
   margin: 0 16px;
   color: #fff;
@@ -51,12 +36,8 @@ const NavItem = styled.div`
   & > a {
     display: inline-block;
     line-height: 2em;
-    border-bottom: 2px solid;
-    border-bottom-color: transparent;
-    /* Use for semantic approach to style the current link */
-    &[aria-current="page"] {
-      border-bottom-color: #fff;
-    }
+    border-bottom: 2px solid
+      ${({ isSelected }) => (isSelected ? "#fff" : "transparent")};
   }
 
   &:first-of-type {

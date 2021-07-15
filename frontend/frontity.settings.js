@@ -9,7 +9,7 @@ const settings = {
   },
   packages: [
     {
-      name: "frontity-chakra-theme",
+      name: "kkn-theme",
       state: {
         theme: {
           // The logo can be a text or an image url

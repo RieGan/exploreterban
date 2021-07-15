@@ -1,38 +1,72 @@
-import { connect, useConnect } from "frontity";
-import Link from "@frontity/components/link";
+import { Box } from "@chakra-ui/react";
+import { connect } from "frontity";
+import React from "react";
+import { omitConnectProps } from "./helpers";
 
-/**
- * The MarsLink component, which is a wrapper on top of the {@link Link}
- * component.
- *
- * @param props - It accepts the same props than the {@link Link} component.
- *
- * @example
- * ```js
- * <MarsLink link="/some-post">
- *   <div>Some Post</div>
- * </MarsLink>
- * ```
- *
- * @returns A {@link Link} component, which returns an HTML anchor element.
- */
-const MarsLink = ({ children, ...props }) => {
-  const { state, actions } = useConnect();
+const Link = ({
+  state,
+  actions,
+  link,
+  className,
+  children,
+  rel,
+  "aria-current": ariaCurrent,
+  ...props
+}) => {
+  const isDisabled = props["aria-disabled"];
+  // If we're not in a frontity environment, let's just render the children
+  if (state == null)
+    return (
+      <a className={className} href={isDisabled ? undefined : "#"} {...props}>
+        {children}
+      </a>
+    );
 
-  /**
-   * A handler that closes the mobile menu when a link is clicked.
-   */
-  const onClick = () => {
+  // Check if the link is an external or internal link
+  const isExternal = link && link.startsWith("http");
+
+  const onClick = event => {
+    // Do nothing if it's an external link
+    if (isExternal || isDisabled) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    // Set the router to the new url.
+    actions.router.set(link);
+
+    // Scroll the page to the top
+    window.scrollTo(0, 0);
+
+    // if the menu modal is open, close it so it doesn't block rendering
     if (state.theme.isMobileMenuOpen) {
       actions.theme.closeMobileMenu();
+    }
+
+    if (props.onClick) {
+      props.onClick(event);
     }
   };
 
   return (
-    <Link {...props} onClick={onClick}>
+    <Box
+      as="a"
+      href={isDisabled ? undefined : link}
+      onClick={onClick}
+      className={className}
+      aria-current={ariaCurrent}
+      rel={isExternal ? "noopener noreferrer" : rel}
+      target={isExternal ? "_blank" : undefined}
+      onMouseEnter={event => {
+        // Prefetch the link's content when the user hovers on the link
+        if (!isExternal) actions.source.fetch(link);
+        if (props.onMouseEnter) props.onMouseEnter(event);
+      }}
+      {...omitConnectProps(props)}
+    >
       {children}
-    </Link>
+    </Box>
   );
 };
 
-export default connect(MarsLink, { injectProps: false });
+export default connect(Link);
