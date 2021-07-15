@@ -1,0 +1,47 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Nama": "Fakultas Mipa"
+      },
+      "geometry": {
+        "coordinates": [
+          110.376618,
+          -7.767378
+        ],
+        "type": "Point"
+      },
+      "id": "9c6052e0da21023e9e1547eae88b7fd6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nama": "Fakultas Geografi"
+      },
+      "geometry": {
+        "coordinates": [
+          110.377582,
+          -7.766547
+        ],
+        "type": "Point"
+      },
+      "id": "a443f91fb45659d4704429cf671cd1df"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nama": "Perpustakaan Pusat"
+      },
+      "geometry": {
+        "coordinates": [
+          110.37817,
+          -7.769355
+        ],
+        "type": "Point"
+      },
+      "id": "f078731e9bb92941a8f78c6804045ea1"
+    }
+  ],
+  "type": "FeatureCollection"
+}
