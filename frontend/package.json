@@ -22,6 +22,7 @@
     "@frontity/tiny-router": "^1.4.3",
     "@frontity/wp-source": "^1.11.5",
     "frontity": "^1.16.1",
+    "frontity-chakra-theme": "file:packages/frontity-chakra-theme",
     "kkn-theme": "file:packages/kkn-theme"
   }
 }
