@@ -32,7 +32,7 @@ const settings = {
             ["UMKM", "/category/umkm/"],
             ["Wisata", "/category/wisata/"],
             ["Maps", "/maps"],
-            ["About", "/about"],
+            ["Blog", "/category/blog/"],
           ],
           // the social links
           socialLinks: [
