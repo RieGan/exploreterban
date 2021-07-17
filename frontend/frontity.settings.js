@@ -2,7 +2,7 @@ const settings = {
   name: "frontend",
   state: {
     frontity: {
-      url: "http://20.198.224.242",
+      url: "https://dev-kkn.byeol.my.id",
       title: "Test Frontity Blog",
       description: "WordPress installation for Frontity development",
     },
@@ -74,7 +74,7 @@ const settings = {
       name: "@frontity/wp-source",
       state: {
         source: {
-          url: "http://20.198.224.242",
+          url: "https://dev-kkn.byeol.my.id",
           postTypes: [
             {
               type: "product", // type slug
