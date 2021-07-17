@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import MapGL, {
   Source,
   Layer,
@@ -7,6 +7,7 @@ import MapGL, {
   FullscreenControl,
   ScaleControl,
   GeolocateControl,
+  FlyToInterpolator,
 } from "react-map-gl";
 import { connect } from "frontity";
 import umkmPoint from "../../../../../datasets/umkm-point.json";
@@ -69,6 +70,17 @@ const UMKMMap = ({ state }) => {
     },
   });
 
+  const changePointLocation = useCallback((loc) => {
+    setPopupInfo(loc);
+    setViewport({
+      longitude: loc.geometry.coordinates[0],
+      latitude: loc.geometry.coordinates[1] - 0.0025,
+      zoom: 16,
+      transitionInterpolator: new FlyToInterpolator({ speed: 1.2 }),
+      transitionDuration: "auto",
+    });
+  }, []);
+
   return (
     <>
       <MapGL
@@ -88,7 +100,7 @@ const UMKMMap = ({ state }) => {
           <></>
         )}
         {layerVisibility["umkm-point"].visible ? (
-          <Pins data={umkmPoint} onClick={setPopupInfo} size={25}>
+          <Pins data={umkmPoint} onClick={changePointLocation} size={25}>
             <HiLocationMarker color="#B81E24" size={25} />
           </Pins>
         ) : (

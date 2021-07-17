@@ -11,7 +11,7 @@ const settings = {
         "pk.eyJ1IjoicWFxYWVuYmVyc2FtYSIsImEiOiJja3I1MGEzNWEwYnJrMnJyMm5lY29raDl4In0.KBuoAaMtcks8aXR0iclhSA",
       latitude: -7.771614,
       longitude: 110.37746,
-      zoom: 14
+      zoom: 15
     },
   },
   packages: [

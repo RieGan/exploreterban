@@ -5,11 +5,11 @@ import { Marker } from "react-map-gl";
 const Pins = (props) => {
   const { data, onClick, size } = props;
 
-  return data.features.map((city, index) => (
+  return data.features.map((loc, index) => (
     <Marker
       key={`marker-${index}`}
-      longitude={city.geometry.coordinates[0]}
-      latitude={city.geometry.coordinates[1]}
+      longitude={loc.geometry.coordinates[0]}
+      latitude={loc.geometry.coordinates[1]}
     >
       <div
         height={size}
@@ -19,7 +19,7 @@ const Pins = (props) => {
           stroke: "none",
           transform: `translate(${-size / 2}px,${-size}px)`,
         }}
-        onClick={() => onClick(city)}
+        onClick={() => onClick(loc)}
       >
         {props.children}
       </div>

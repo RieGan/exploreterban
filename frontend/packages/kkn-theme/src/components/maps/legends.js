@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect } from "react";
+import React, { memo } from "react";
 import { styled } from "frontity";
 
 const Checkbox = ({ keyName, name, value, onChange }) => {
@@ -6,6 +6,7 @@ const Checkbox = ({ keyName, name, value, onChange }) => {
     <div key={keyName} className="input">
       <label>{name}</label>
       <input
+        style={{ marginLeft: "20px" }}
         type="checkbox"
         checked={value}
         onChange={(evt) => onChange(keyName, evt.target.checked)}
@@ -26,7 +27,7 @@ const StyleControls = (props) => {
 
   return (
     <Legends>
-      <p>Layer</p>
+      <h1>Layer</h1>
       {Object.keys(layerVisibility).map((key) => (
         <Checkbox
           key={key}
@@ -54,6 +55,7 @@ const Legends = styled.div`
   color: #6b6b76;
   text-transform: uppercase;
   outline: none;
+  font-family: Helvetica, Arial, sans-serif;
 `;
 
 export default memo(StyleControls);
