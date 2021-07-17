@@ -15,6 +15,7 @@ import UMKMMap from "./maps/umkm-maps";
 
 // CSS
 import mapboxCss from "../styles/mapbox-gl.css";
+import mapboxCustomCss from "../styles/mapbox-custom-style.css";
 
 // Theme is the root React component of our theme. The one we will export
 // in roots.
@@ -62,6 +63,7 @@ const Theme = ({ state }) => {
       <Footer />
 
       <Global styles={css(mapboxCss)} />
+      <Global styles={css(mapboxCustomCss)} />
     </ChakraProvider>
   );
 };
