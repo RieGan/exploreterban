@@ -39,16 +39,18 @@ const StyleControls = (props) => {
       </div>
       <hr style={{ marginBottom: "10px" }}></hr>
       <table>
-        {Object.keys(layerVisibility).map((key) => (
-          <Checkbox
-            key={key}
-            keyName={key}
-            name={layerVisibility[key].name}
-            value={layerVisibility[key].visible}
-            marker={layerVisibility[key].marker}
-            onChange={toggleLayer}
-          />
-        ))}
+        <tbody>
+          {Object.keys(layerVisibility).map((key) => (
+            <Checkbox
+              key={key}
+              keyName={key}
+              name={layerVisibility[key].name}
+              value={layerVisibility[key].visible}
+              marker={layerVisibility[key].marker}
+              onChange={toggleLayer}
+            />
+          ))}
+        </tbody>
       </table>
     </Legends>
   );
