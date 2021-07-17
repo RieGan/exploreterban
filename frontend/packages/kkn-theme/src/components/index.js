@@ -1,5 +1,5 @@
 import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { connect, Head } from "frontity";
+import { connect, Head, css, Global } from "frontity";
 import Switch from "@frontity/components/switch";
 import React from "react";
 import Archive from "./archive";
@@ -12,6 +12,9 @@ import SearchResults from "./search";
 import Title from "./title";
 import FontFace from "./styles/font-face";
 import UMKMMap from "./maps/umkm-maps";
+
+// CSS
+import mapboxCss from "../styles/mapbox-gl.css";
 
 // Theme is the root React component of our theme. The one we will export
 // in roots.
@@ -57,6 +60,8 @@ const Theme = ({ state }) => {
       </Box>
 
       <Footer />
+
+      <Global styles={css(mapboxCss)} />
     </ChakraProvider>
   );
 };

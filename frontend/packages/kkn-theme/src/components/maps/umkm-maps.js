@@ -1,29 +1,23 @@
-import React, { useState } from "react";
-import ReactMapGL, { Source, Layer } from "react-map-gl";
+import React, { useState, useCallback } from "react";
+import ReactMapGL, { Source, Layer, Popup } from "react-map-gl";
 import { connect } from "frontity";
-import "../../styles/mapbox-gl.css";
 import umkmPoint from "../../../../../datasets/umkm-point.json";
 import umkmBoundary from "../../../../../datasets/umkm-boundary.json";
-
-const pointStyle = {
-  id: "point",
-  type: "circle",
-  paint: {
-    "circle-radius": 10,
-    "circle-color": "#007cbf",
-  },
-};
+import Legends from "./legends";
+import Pins from "./umkm-pin";
+import Info from "./umkm-info";
 
 const boundaryStyle = {
   id: "data",
   type: "fill",
   paint: {
     "fill-color": "#630830",
-    "fill-opacity": 0.5,
+    "fill-opacity": 0.2,
   },
 };
 
 const UMKMMap = ({ state }) => {
+  const [popupInfo, setPopupInfo] = useState(null);
   const [viewport, setViewport] = useState({
     longitude: state.mapbox.longitude,
     latitude: state.mapbox.latitude,
@@ -38,12 +32,25 @@ const UMKMMap = ({ state }) => {
       onViewportChange={setViewport}
       mapboxApiAccessToken={state.mapbox.mapboxAccessToken}
     >
-      <Source id="umkm-point" type="geojson" data={umkmPoint}>
-        <Layer {...pointStyle} />
-      </Source>
       <Source id="umkm-boundary" type="geojson" data={umkmBoundary}>
         <Layer {...boundaryStyle} />
       </Source>
+      <Pins data={umkmPoint} onClick={setPopupInfo} />
+
+      {popupInfo && (
+        <Popup
+          tipSize={5}
+          anchor="top"
+          longitude={popupInfo.geometry.coordinates[0]}
+          latitude={popupInfo.geometry.coordinates[1]}
+          closeOnClick={false}
+          onClose={setPopupInfo}
+        >
+          <Info info={popupInfo} />
+        </Popup>
+      )}
+
+      <Legends />
     </ReactMapGL>
   );
 };
