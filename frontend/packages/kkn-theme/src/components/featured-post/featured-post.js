@@ -58,8 +58,8 @@ export const FeaturedPostSection = ({ data, ...props }) => (
       width={{ base: "100%", lg: "35%" }}
       flexGrow="1"
     >
-      <SecondaryPostPreview data={data[0]} />
-      <SecondaryPostPreview data={data[0]} />
+      <SecondaryPostPreview data={data[1]} />
+      <SecondaryPostPreview data={data[2]} />
     </Flex>
   </Flex>
 );

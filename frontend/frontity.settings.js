@@ -29,10 +29,10 @@ const settings = {
           // the top-level navigation labels and links
           menu: [
             ["Home", "/"],
-            ["Portfolio", "/portfolio"],
+            ["UMKM", "/category/umkm/"],
+            ["Wisata", "/category/wisata/"],
             ["Maps", "/maps"],
             ["About", "/about"],
-            ["Contact", "/contact"],
           ],
           // the social links
           socialLinks: [
