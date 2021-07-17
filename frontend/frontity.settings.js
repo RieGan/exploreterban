@@ -9,9 +9,10 @@ const settings = {
     mapbox: {
       mapboxAccessToken:
         "pk.eyJ1IjoicWFxYWVuYmVyc2FtYSIsImEiOiJja3I1MGEzNWEwYnJrMnJyMm5lY29raDl4In0.KBuoAaMtcks8aXR0iclhSA",
-      latitude: -7.771614,
-      longitude: 110.37746,
-      zoom: 15
+      latitude: -7.769137,
+      longitude: 110.377945,
+      zoom: 15,
+      style: "mapbox://styles/qaqaenbersama/ckr50ef8i0jyi19mz06qyjbi7",
     },
   },
   packages: [

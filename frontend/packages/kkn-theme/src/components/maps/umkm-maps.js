@@ -17,7 +17,8 @@ import Pins from "./umkm-pin";
 import Info from "./umkm-info";
 
 // Icons
-import { HiLocationMarker } from "react-icons/hi";
+import { AiTwotoneShop } from "react-icons/ai";
+import { BsFillCircleFill } from "react-icons/bs";
 
 const boundaryStyle = {
   id: "data",
@@ -63,10 +64,12 @@ const UMKMMap = ({ state }) => {
     "umkm-boundary": {
       name: "Batas Wilayah",
       visible: true,
+      marker: <BsFillCircleFill color="#630830" size={20} />,
     },
     "umkm-point": {
       name: "UMKM",
       visible: true,
+      marker: <AiTwotoneShop color="#B81E24" size={20} />,
     },
   });
 
@@ -87,7 +90,7 @@ const UMKMMap = ({ state }) => {
         {...viewport}
         width="100vw"
         height="100vh"
-        mapStyle="mapbox://styles/mapbox/dark-v9"
+        mapStyle={state.mapbox.style}
         onViewportChange={setViewport}
         mapboxApiAccessToken={state.mapbox.mapboxAccessToken}
       >
@@ -101,7 +104,7 @@ const UMKMMap = ({ state }) => {
         )}
         {layerVisibility["umkm-point"].visible ? (
           <Pins data={umkmPoint} onClick={changePointLocation} size={25}>
-            <HiLocationMarker color="#B81E24" size={25} />
+            <AiTwotoneShop color="#B81E24" size={25} />
           </Pins>
         ) : (
           <></>

@@ -1,9 +1,12 @@
 import React, { memo } from "react";
 import { styled } from "frontity";
 
-const Checkbox = ({ keyName, name, value, onChange }) => {
+const Checkbox = ({ keyName, name, value, onChange, marker }) => {
   return (
-    <tr key={keyName}>
+    <tr key={keyName} style={{ lineHeight: "20pt" }}>
+      <td>
+        <div style={{ marginRight: "10px" }}>{marker}</div>
+      </td>
       <td>
         <label>{name}</label>
       </td>
@@ -25,7 +28,7 @@ const StyleControls = (props) => {
   const toggleLayer = (keyName, val) => {
     setLayerVisibility({
       ...layerVisibility,
-      [keyName]: { name: layerVisibility[keyName].name, visible: val },
+      [keyName]: { ...layerVisibility[keyName], visible: val },
     });
   };
 
@@ -42,6 +45,7 @@ const StyleControls = (props) => {
             keyName={key}
             name={layerVisibility[key].name}
             value={layerVisibility[key].visible}
+            marker={layerVisibility[key].marker}
             onChange={toggleLayer}
           />
         ))}
