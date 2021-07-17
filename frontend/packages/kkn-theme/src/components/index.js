@@ -11,6 +11,7 @@ import Post from "./post/post";
 import SearchResults from "./search";
 import Title from "./title";
 import FontFace from "./styles/font-face";
+import UMKMMap from "./maps/umkm-maps";
 
 // Theme is the root React component of our theme. The one we will export
 // in roots.
@@ -20,9 +21,9 @@ const Theme = ({ state }) => {
 
   const overrides = extendTheme({
     fonts: {
-      heading: "Kelson, system-ui, Helvetica, sans-serif"
+      heading: "Kelson, system-ui, Helvetica, sans-serif",
     },
-    colors: { ...state.theme.colors }
+    colors: { ...state.theme.colors },
   });
 
   return (
@@ -51,6 +52,7 @@ const Theme = ({ state }) => {
           <Archive when={data.isArchive} />
           <Post when={data.isPostType} />
           <Page404 when={data.is404} />
+          <UMKMMap when={data.isMapPage} />
         </Switch>
       </Box>
 

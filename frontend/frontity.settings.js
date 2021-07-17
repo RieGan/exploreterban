@@ -6,6 +6,13 @@ const settings = {
       title: "Test Frontity Blog",
       description: "WordPress installation for Frontity development",
     },
+    mapbox: {
+      mapboxAccessToken:
+        "pk.eyJ1IjoicWFxYWVuYmVyc2FtYSIsImEiOiJja3I1MGEzNWEwYnJrMnJyMm5lY29raDl4In0.KBuoAaMtcks8aXR0iclhSA",
+      latitude: -7.771614,
+      longitude: 110.37746,
+      zoom: 14
+    },
   },
   packages: [
     {
@@ -22,6 +29,7 @@ const settings = {
           menu: [
             ["Home", "/"],
             ["Portfolio", "/portfolio"],
+            ["Maps", "/maps"],
             ["About", "/about"],
             ["Contact", "/contact"],
           ],
