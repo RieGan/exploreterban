@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { styled } from "frontity";
 
 const CityInfo = (props) => {
-  const { name, address, phone, product } = props.info.properties;
+  const { name, address, phone, product, image_url } = props.info.properties;
   return (
     <Container>
       <div style={{ color: "#ECA41A", fontSize: 13 }}>
@@ -30,7 +30,11 @@ const CityInfo = (props) => {
       </table>
       <img
         width={240}
-        src="https://i.guim.co.uk/img/media/fe1e34da640c5c56ed16f76ce6f994fa9343d09d/0_174_3408_2046/master/3408.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=0d3f33fb6aa6e0154b7713a00454c83d"
+        src={image_url}
+        style={{
+          display: "block",
+          margin: "0 auto",
+        }}
       />
     </Container>
   );

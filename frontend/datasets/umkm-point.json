@@ -6,7 +6,8 @@
         "name": "Fakultas Mipa",
         "address": "Sekip Utara Bulaksumur Kotak Pos 21, Senolowo, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281",
         "phone": "(0274) 513339",
-        "product": "Batik"
+        "product": "Batik",
+        "image_url": "https://ugm.ac.id/galleries/static_image/education/fak-mipa1.jpg"
       },
       "geometry": {
         "coordinates": [
@@ -23,7 +24,8 @@
         "name": "Fakultas Geografi",
         "address": "Universitas Gadjah Mada Jl. Kaliurang, Sekip Utara, Bulaksumur Sinduadi Sleman, Senolowo, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281",
         "phone": "(0274) 6492340",
-        "product": "Tempe Gembus"
+        "product": "Tempe Gembus",
+        "image_url": "https://awsimages.detik.net.id/community/media/visual/2020/02/11/d7f76198-a38d-4816-827d-951bf5ff6832_169.jpeg?w=700&q=90"
       },
       "geometry": {
         "coordinates": [
@@ -40,7 +42,8 @@
         "name": "Perpustakaan Pusat",
         "address": "Bulaksumur, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281",
         "phone": "(0274) 588688",
-        "product": "Tahu Gejrot"
+        "product": "Tahu Gejrot",
+        "image_url": "http://tpb.tp.ugm.ac.id/wp-content/uploads/2015/10/perpustakaan-ugm.png"
       },
       "geometry": {
         "coordinates": [
