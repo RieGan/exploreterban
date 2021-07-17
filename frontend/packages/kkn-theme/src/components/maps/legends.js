@@ -3,15 +3,19 @@ import { styled } from "frontity";
 
 const Checkbox = ({ keyName, name, value, onChange }) => {
   return (
-    <div key={keyName} className="input">
-      <label>{name}</label>
-      <input
-        style={{ marginLeft: "20px" }}
-        type="checkbox"
-        checked={value}
-        onChange={(evt) => onChange(keyName, evt.target.checked)}
-      />
-    </div>
+    <tr key={keyName}>
+      <td>
+        <label>{name}</label>
+      </td>
+      <td>
+        <input
+          style={{ marginLeft: "50px" }}
+          type="checkbox"
+          checked={value}
+          onChange={(evt) => onChange(keyName, evt.target.checked)}
+        />
+      </td>
+    </tr>
   );
 };
 
@@ -27,16 +31,21 @@ const StyleControls = (props) => {
 
   return (
     <Legends>
-      <h1>Layer</h1>
-      {Object.keys(layerVisibility).map((key) => (
-        <Checkbox
-          key={key}
-          keyName={key}
-          name={layerVisibility[key].name}
-          value={layerVisibility[key].visible}
-          onChange={toggleLayer}
-        />
-      ))}
+      <div style={{ color: "#ECA41A", fontSize: 15 }}>
+        <b>LEGENDA</b>
+      </div>
+      <hr></hr>
+      <table>
+        {Object.keys(layerVisibility).map((key) => (
+          <Checkbox
+            key={key}
+            keyName={key}
+            name={layerVisibility[key].name}
+            value={layerVisibility[key].visible}
+            onChange={toggleLayer}
+          />
+        ))}
+      </table>
     </Legends>
   );
 };
@@ -53,7 +62,7 @@ const Legends = styled.div`
   font-size: 13px;
   line-height: 2;
   color: #6b6b76;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   outline: none;
   font-family: Helvetica, Arial, sans-serif;
 `;

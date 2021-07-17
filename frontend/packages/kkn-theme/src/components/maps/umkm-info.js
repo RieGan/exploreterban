@@ -8,6 +8,7 @@ const CityInfo = (props) => {
       <div style={{ color: "#ECA41A", fontSize: 13 }}>
         <b>{name.toUpperCase()}</b>
       </div>
+      <hr></hr>
       <table>
         <tr style={{ verticalAlign: "top" }}>
           <td>
