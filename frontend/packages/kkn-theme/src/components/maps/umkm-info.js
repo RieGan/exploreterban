@@ -8,26 +8,28 @@ const CityInfo = (props) => {
       <div style={{ color: "#ECA41A", fontSize: 13 }}>
         <b>{name.toUpperCase()}</b>
       </div>
-      <hr></hr>
+      <hr style={{ marginBottom: "10px" }}></hr>
       <table>
-        <tr style={{ verticalAlign: "top" }}>
-          <td>
-            <b>Alamat:</b>
-          </td>
-          <td>{address}</td>
-        </tr>
-        <tr style={{ verticalAlign: "top" }}>
-          <td>
-            <b>Telepon:</b>
-          </td>
-          <td>{phone}</td>
-        </tr>
-        <tr style={{ verticalAlign: "top" }}>
-          <td>
-            <b>Produk:</b>
-          </td>
-          <td>{product}</td>
-        </tr>
+        <tbody>
+          <tr style={{ verticalAlign: "top" }}>
+            <td>
+              <b>Alamat:</b>
+            </td>
+            <td>{address}</td>
+          </tr>
+          <tr style={{ verticalAlign: "top" }}>
+            <td>
+              <b>Telepon:</b>
+            </td>
+            <td>{phone}</td>
+          </tr>
+          <tr style={{ verticalAlign: "top" }}>
+            <td>
+              <b>Produk:</b>
+            </td>
+            <td>{product}</td>
+          </tr>
+        </tbody>
       </table>
       <img
         width={240}
