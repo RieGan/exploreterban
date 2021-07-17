@@ -1,13 +1,9 @@
 import React, { memo } from "react";
 import { Marker } from "react-map-gl";
-import { HiLocationMarker } from "react-icons/hi";
-
-const SIZE = 20;
-const PICKER_COLOR = "B81E24";
 
 // Important for perf: the markers never change, avoid rerender when the map viewport changes
 const Pins = (props) => {
-  const { data, onClick } = props;
+  const { data, onClick, size } = props;
 
   return data.features.map((city, index) => (
     <Marker
@@ -16,16 +12,16 @@ const Pins = (props) => {
       latitude={city.geometry.coordinates[1]}
     >
       <div
-        height={SIZE}
+        height={size}
         viewBox="0 0 24 24"
         style={{
           cursor: "pointer",
           stroke: "none",
-          transform: `translate(${-SIZE / 2}px,${-SIZE}px)`,
+          transform: `translate(${-size / 2}px,${-size}px)`,
         }}
         onClick={() => onClick(city)}
       >
-        <HiLocationMarker color={PICKER_COLOR} size={SIZE} />
+        {props.children}
       </div>
     </Marker>
   ));

@@ -1,28 +1,41 @@
-import React, { memo } from "react";
+import React, { memo, useState, useEffect } from "react";
 import { styled } from "frontity";
 
+const Checkbox = ({ keyName, name, value, onChange }) => {
+  return (
+    <div key={keyName} className="input">
+      <label>{name}</label>
+      <input
+        type="checkbox"
+        checked={value}
+        onChange={(evt) => onChange(keyName, evt.target.checked)}
+      />
+    </div>
+  );
+};
+
 const StyleControls = (props) => {
+  const { layerVisibility, setLayerVisibility } = props;
+
+  const toggleLayer = (keyName, val) => {
+    setLayerVisibility({
+      ...layerVisibility,
+      [keyName]: { name: layerVisibility[keyName].name, visible: val },
+    });
+  };
+
   return (
     <Legends>
-      <h3>Marker, Popup, NavigationControl and FullscreenControl </h3>
-      <p>
-        Map showing top 20 most populated cities of the United States. Click on
-        a marker to learn more.
-      </p>
-      <p>
-        Data source:{" "}
-        <a href="https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population">
-          Wikipedia
-        </a>
-      </p>
-      <div className="source-link">
-        <a
-          href="https://github.com/visgl/react-map-gl/tree/6.1-release/examples/controls"
-          target="_new"
-        >
-          View Code ↗
-        </a>
-      </div>
+      <p>Layer</p>
+      {Object.keys(layerVisibility).map((key) => (
+        <Checkbox
+          key={key}
+          keyName={key}
+          name={layerVisibility[key].name}
+          value={layerVisibility[key].visible}
+          onChange={toggleLayer}
+        />
+      ))}
     </Legends>
   );
 };
