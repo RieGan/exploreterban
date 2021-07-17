@@ -37,7 +37,7 @@ const StyleControls = (props) => {
       <div style={{ color: "#ECA41A", fontSize: 15 }}>
         <b>LEGENDA</b>
       </div>
-      <hr></hr>
+      <hr style={{ marginBottom: "10px" }}></hr>
       <table>
         {Object.keys(layerVisibility).map((key) => (
           <Checkbox
