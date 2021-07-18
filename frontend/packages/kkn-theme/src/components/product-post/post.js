@@ -11,6 +11,24 @@ const Post = ({ state, actions }) => {
   const postData = getProductData(state);
   const post = formatProductData(postData);
 
+  // Property
+  // post = {
+  //   id,
+  //   owner,
+  //   publishDate,
+  //   product_name,
+  //   product_price,
+  //   link,
+  //   location,
+  //   featured_media{
+  //     id,
+  //     alt,
+  //     src,
+  //     srcSet,
+  //   },
+  //   product_description,
+  // }
+
   // Once the post has loaded in the DOM, prefetch both the
   // home posts and the list component so if the user visits
   // the home page, everything is ready and it loads instantly.
