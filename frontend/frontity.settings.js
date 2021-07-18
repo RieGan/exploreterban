@@ -31,6 +31,7 @@ const settings = {
             ["Home", "/"],
             ["UMKM", "/category/umkm/"],
             ["Wisata", "/category/wisata/"],
+            ["Produk", "/product/"],
             ["Maps", "/maps"],
             ["Blog", "/category/blog/"],
           ],

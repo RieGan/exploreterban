@@ -12,6 +12,7 @@ import SearchResults from "./search";
 import Title from "./title";
 import FontFace from "./styles/font-face";
 import UMKMMap from "./maps/umkm-maps";
+import Product from "./product-archive";
 
 // CSS
 import mapboxCss from "../styles/mapbox-gl.css";
@@ -51,6 +52,7 @@ const Theme = ({ state }) => {
         minH="calc(100vh - 320px)"
       >
         <Switch>
+          <Product when={data.isProductArchive} />
           <Loading when={data.isFetching} />
           <SearchResults when={data.isSearch} />
           <Archive when={data.isArchive} />

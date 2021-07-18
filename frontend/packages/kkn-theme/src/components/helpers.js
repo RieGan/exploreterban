@@ -2,7 +2,7 @@ function getSrcSet(media) {
   const srcset =
     Object.values(media.media_details.sizes)
       // Get the url and width of each size.
-      .map(item => [item.source_url, item.width])
+      .map((item) => [item.source_url, item.width])
       // Recude them to a string with the format required by `srcset`.
       .reduce(
         (final, current, index, array) =>
@@ -24,14 +24,14 @@ export function getMediaAttributes(state, id) {
     id,
     alt: media.alt_text,
     src: media.source_url,
-    srcSet
+    srcSet,
   };
 }
 
 export function getPostCategories(state, post) {
   const allCategories = state.source.category;
   const categories =
-    post.categories && post.categories.map(catId => allCategories[catId]);
+    post.categories && post.categories.map((catId) => allCategories[catId]);
   return categories ? categories.filter(Boolean) : [];
 }
 
@@ -41,7 +41,7 @@ export function getPostAuthor(state, post) {
 
 export function getPostTags(state, post) {
   const allTags = state.source.tag;
-  const tags = post.tags && post.tags.map(tagId => allTags[tagId]);
+  const tags = post.tags && post.tags.map((tagId) => allTags[tagId]);
   return tags ? tags.filter(Boolean) : [];
 }
 
@@ -62,7 +62,27 @@ export function formatPostData(state, post) {
     link: post.link,
     featured_media: getMediaAttributes(state, post.featured_media),
     content: post.content.rendered,
-    excerpt: post.excerpt.rendered
+    excerpt: post.excerpt.rendered,
+  };
+}
+
+export function formatProductData(state, post) {
+  console.log(state, post);
+  return {
+    id: post.id,
+    owner: post.owner,
+    publishDate: post.date,
+    product_name: post.product_name,
+    product_price: post.product_price,
+    link: post.link,
+    location: post.location,
+    featured_media: {
+      id: post.product_photo.ID,
+      alt: post.slug,
+      src: post.product_photo.guid,
+      srcSet: "",
+    },
+    product_description: post.product_description,
   };
 }
 
@@ -87,9 +107,9 @@ export function omitConnectProps(props) {
     "roots",
     "fills",
     "libraries",
-    "getSnapshot"
+    "getSnapshot",
   ];
-  const isGetSnapshot = prop =>
+  const isGetSnapshot = (prop) =>
     typeof prop === "function" && prop.name === "getSnapshot";
 
   for (const prop in props) {
@@ -112,10 +132,10 @@ const monthNames = [
   "September",
   "October",
   "Novemeber",
-  "December"
+  "December",
 ];
 
-const formatDay = day => {
+const formatDay = (day) => {
   const lastLetter = day[day.length - 1];
   if (lastLetter) return `${day}nd`;
   if (lastLetter) return `${day}st`;
@@ -133,7 +153,8 @@ export function formatDate(date) {
 }
 
 export function isUrl(str) {
-  var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!-/]))?/;
+  var regexp =
+    /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!-/]))?/;
   return regexp.test(str);
 }
 
@@ -146,6 +167,6 @@ export function debounce(fn) {
     },
     () => {
       cancelAnimationFrame(queued);
-    }
+    },
   ];
 }
