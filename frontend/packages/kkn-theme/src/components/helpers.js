@@ -89,6 +89,7 @@ export function formatProductData(post) {
     },
     product_description: post.product_description,
     phone_number: post.phone_number,
+    product_link: post.product_link,
   };
 }
 

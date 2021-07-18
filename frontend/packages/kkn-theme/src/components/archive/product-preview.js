@@ -10,6 +10,7 @@ const ProductPreview = ({ data, ...rest }) => {
     featured_media,
     link,
     product_price,
+    product_link,
   } = data;
 
   return (
@@ -39,6 +40,7 @@ const ProductPreview = ({ data, ...rest }) => {
           color="gray.700"
           dangerouslySetInnerHTML={{ __html: product_description }}
         />
+        {product_link && <Link link={product_link}>Beli Produk</Link>}
       </Flex>
     </Flex>
   );

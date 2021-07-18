@@ -6,6 +6,7 @@ import Section from "../styles/section";
 import FeaturedMedia from "./featured-media";
 import PostHeader from "./post-header";
 import { getProductData, formatProductData } from "../helpers";
+import Link from "../link";
 
 const Post = ({ state, actions }) => {
   const postData = getProductData(state);
@@ -28,6 +29,7 @@ const Post = ({ state, actions }) => {
   //   },
   //   product_description,
   //   phone_number,
+  //   product_link,
   // }
 
   // Once the post has loaded in the DOM, prefetch both the
@@ -67,6 +69,9 @@ const Post = ({ state, actions }) => {
           <p>Lokasi: {post.location}</p>
           <p>Owner: {post.owner}</p>
           <p>Nomor Telepon: {post.phone_number}</p>
+          {post.product_link && (
+            <Link link={post.product_link}>Beli Produk</Link>
+          )}
         </Content>
       </Section>
     </Box>
