@@ -92,6 +92,17 @@ export function formatProductData(post) {
   };
 }
 
+export function getFeaturedProduct(state, routeData) {
+  const returnData = [];
+  const maxCount = 4;
+  routeData.forEach((item, idx) => {
+    const itemData = state.source[item.type][item.id];
+    if (idx < maxCount) returnData.push(itemData);
+    else return returnData;
+  });
+  return returnData;
+}
+
 export function splitPosts(state, routeData) {
   const firstThreePosts = [];
   const otherPosts = [];

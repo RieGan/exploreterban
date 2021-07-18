@@ -9,24 +9,6 @@ const Archive = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
 
-  // Property
-  // data = {
-  //   id,
-  //   owner,
-  //   publishDate,
-  //   product_name,
-  //   product_price,
-  //   link,
-  //   location,
-  //   featured_media{
-  //     id,
-  //     alt,
-  //     src,
-  //     srcSet,
-  //   },
-  //   product_description,
-  // }
-
   return (
     <Box bg="accent.50" as="section">
       {/* If the list is a taxonomy, we render a title. */}
@@ -46,7 +28,7 @@ const Archive = ({ state }) => {
         mx="auto"
       >
         {/* Iterate over the items of the list. */}
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing="40px">
+        <SimpleGrid columns={{ base: 1, md: 4 }} spacing="40px">
           {data.items.map(({ type, id }) => {
             const item = state.source[type][id];
             return <ArchiveItem key={item.id} item={item} />;

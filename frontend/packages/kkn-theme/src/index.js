@@ -88,6 +88,11 @@ const chakraTheme = {
       init: ({ libraries }) => {
         libraries.source.handlers.push(mapPageHandler);
       },
+      beforeSSR: ({ state, actions }) => {
+        if (state.router.link == "/") {
+          actions.source.fetch("/product/");
+        }
+      },
     },
   },
   libraries: {
