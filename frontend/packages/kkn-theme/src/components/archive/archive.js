@@ -3,6 +3,7 @@ import { connect } from "frontity";
 import React from "react";
 import ArchiveHeader from "./archive-header";
 import ArchiveItem from "./archive-item";
+import ProductItem from "./product-item";
 import HomepageArchive from "./homepage-archive";
 import Pagination from "./pagination";
 import { decode } from "frontity";
@@ -24,6 +25,15 @@ const Archive = ({ state }) => {
         />
       )}
 
+      {/* If product */}
+      {data.isProductArchive && (
+        <ArchiveHeader
+          showPattern={state.theme.showBackgroundPattern}
+          taxonomy={"Produk UMKM oleh"}
+          title={"Desa Mulusan"}
+        />
+      )}
+
       {/* If the list is an author, we render a title. */}
       {data.isAuthor && (
         <ArchiveHeader
@@ -40,13 +50,23 @@ const Archive = ({ state }) => {
         maxWidth="1200px"
         mx="auto"
       >
-        {/* Iterate over the items of the list. */}
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing="40px">
-          {data.items.map(({ type, id }) => {
-            const item = state.source[type][id];
-            return <ArchiveItem key={item.id} item={item} />;
-          })}
-        </SimpleGrid>
+        {!data.isProductArchive && (
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing="40px">
+            {data.items.map(({ type, id }) => {
+              const item = state.source[type][id];
+              return <ArchiveItem key={item.id} item={item} />;
+            })}
+          </SimpleGrid>
+        )}
+
+        {data.isProductArchive && (
+          <SimpleGrid columns={{ base: 1, md: 4 }} spacing="40px">
+            {data.items.map(({ type, id }) => {
+              const item = state.source[type][id];
+              return <ProductItem key={item.id} item={item} />;
+            })}
+          </SimpleGrid>
+        )}
 
         <Pagination mt="56px" />
       </Box>
