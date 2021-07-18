@@ -11,12 +11,14 @@ import { PaginationButton } from "./pagination";
 const HomepageArchive = ({ state, libraries }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
-
   const [firstThreePosts, othersPosts] = splitPosts(state, data.items);
 
-  const productData = state.source.get(`/product`);
-  // Fungsi getFeaturedProduct:  max 5 data
-  const product = getFeaturedProduct(state, productData.items);
+  // Jika di home ("/")
+  var productData, product;
+  if (state.router.link == "/") {
+    productData = state.source.get(`/product`);
+    product = getFeaturedProduct(state, productData.items, 4);
+  }
 
   return (
     <Box bg="accent.50" as="section">
@@ -30,26 +32,31 @@ const HomepageArchive = ({ state, libraries }) => {
         maxWidth="1200px"
         mx="auto"
       >
-        {/* Produk UMKM */}
-        <Heading
-          textTransform="uppercase"
-          textAlign="center"
-          fontSize={{ base: "4xl", md: "6xl" }}
-          color="accent.400"
-        >
-          Produk UMKM
-        </Heading>
+        {/* Jika di home ("/") */}
+        {state.router.link == "/" && (
+          <>
+            {/* Produk UMKM */}
+            <Heading
+              textTransform="uppercase"
+              textAlign="center"
+              fontSize={{ base: "4xl", md: "6xl" }}
+              color="accent.400"
+            >
+              Produk UMKM
+            </Heading>
 
-        <SimpleGrid
-          mt={{ base: "64px", md: "80px" }}
-          columns={{ base: 1, md: 4 }}
-          spacing="40px"
-        >
-          {product.map(({ type, id }) => {
-            const item = state.source[type][id];
-            return <ProductItem key={item.id} item={item} />;
-          })}
-        </SimpleGrid>
+            <SimpleGrid
+              mt={{ base: "64px", md: "80px" }}
+              columns={{ base: 1, md: 4 }}
+              spacing="40px"
+            >
+              {product.map(({ type, id }) => {
+                const item = state.source[type][id];
+                return <ProductItem key={item.id} item={item} />;
+              })}
+            </SimpleGrid>
+          </>
+        )}
 
         {/* Posts */}
         <Heading
@@ -63,7 +70,7 @@ const HomepageArchive = ({ state, libraries }) => {
 
         <SimpleGrid
           mt={{ base: "64px", md: "80px" }}
-          columns={{ base: 1, md: 2 }}
+          columns={{ base: 1, md: 3 }}
           spacing="40px"
         >
           {othersPosts.map(({ type, id }) => {

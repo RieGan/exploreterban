@@ -5,7 +5,7 @@ import {
   PostOverlay,
   PostTitle,
   PrimaryPostArticle,
-  SecondaryPostArticle
+  SecondaryPostArticle,
 } from "./components";
 import generateGradient from "./genarate-gradient";
 import { Flex, Box } from "@chakra-ui/react";
@@ -48,18 +48,22 @@ export const SecondaryPostPreview = ({ data, ...props }) => {
   );
 };
 
-export const FeaturedPostSection = ({ data, ...props }) => (
-  <Flex as="section" direction={{ base: "column", lg: "row" }} {...props}>
-    <Box width={{ base: "100%", lg: "65%" }} flexGrow="1">
-      <PrimaryPostPreview data={data[0]} />
-    </Box>
-    <Flex
-      direction={{ base: "column", md: "row", lg: "column" }}
-      width={{ base: "100%", lg: "35%" }}
-      flexGrow="1"
-    >
-      <SecondaryPostPreview data={data[1]} />
-      <SecondaryPostPreview data={data[2]} />
+export const FeaturedPostSection = ({ data, ...props }) => {
+  // Precaution if data length less than 3
+  data = [...data, ...data, ...data].slice(0, 3);
+  return (
+    <Flex as="section" direction={{ base: "column", lg: "row" }} {...props}>
+      <Box width={{ base: "100%", lg: "65%" }} flexGrow="1">
+        <PrimaryPostPreview data={data[0]} />
+      </Box>
+      <Flex
+        direction={{ base: "column", md: "row", lg: "column" }}
+        width={{ base: "100%", lg: "35%" }}
+        flexGrow="1"
+      >
+        <SecondaryPostPreview data={data[1]} />
+        <SecondaryPostPreview data={data[2]} />
+      </Flex>
     </Flex>
-  </Flex>
-);
+  );
+};

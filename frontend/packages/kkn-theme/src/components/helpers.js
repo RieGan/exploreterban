@@ -92,12 +92,11 @@ export function formatProductData(post) {
   };
 }
 
-export function getFeaturedProduct(state, routeData) {
+export function getFeaturedProduct(state, routeData, count) {
   const returnData = [];
-  const maxCount = 4;
   routeData.forEach((item, idx) => {
     const itemData = state.source[item.type][item.id];
-    if (idx < maxCount) returnData.push(itemData);
+    if (idx < count) returnData.push(itemData);
     else return returnData;
   });
   return returnData;
