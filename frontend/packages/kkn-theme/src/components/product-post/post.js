@@ -27,6 +27,7 @@ const Post = ({ state, actions }) => {
   //     srcSet,
   //   },
   //   product_description,
+  //   phone_number,
   // }
 
   // Once the post has loaded in the DOM, prefetch both the
@@ -65,6 +66,7 @@ const Post = ({ state, actions }) => {
           <p>Harga: {post.product_price}</p>
           <p>Lokasi: {post.location}</p>
           <p>Owner: {post.owner}</p>
+          <p>Nomor Telepon: {post.phone_number}</p>
         </Content>
       </Section>
     </Box>

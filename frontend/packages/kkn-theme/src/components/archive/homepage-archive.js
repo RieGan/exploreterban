@@ -13,10 +13,13 @@ const HomepageArchive = ({ state, libraries }) => {
 
   const [firstThreePosts, othersPosts] = splitPosts(state, data.items);
 
+  const product = state.source.get(`/product`);
+  console.log(product, state.router.link);
+
   return (
     <Box bg="accent.50" as="section">
       <FeaturedPostSection
-        data={firstThreePosts.map(post => formatPostData(state, post))}
+        data={firstThreePosts.map((post) => formatPostData(state, post))}
       />
       <Box
         py={{ base: "64px", md: "80px" }}

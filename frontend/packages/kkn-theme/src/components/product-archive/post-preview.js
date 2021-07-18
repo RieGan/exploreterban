@@ -9,9 +9,7 @@ const PostPreview = ({ data, ...rest }) => {
     product_description,
     featured_media,
     link,
-    location,
     product_price,
-    owner,
   } = data;
 
   return (
@@ -35,8 +33,6 @@ const PostPreview = ({ data, ...rest }) => {
           <Link link={link}>{product_name}</Link>
         </Heading>
         <p>Harga: {product_price}</p>
-        <p>Lokasi: {location}</p>
-        <p>Owner: {owner}</p>
         <Box
           my="20px"
           flex="1"

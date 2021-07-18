@@ -88,6 +88,7 @@ export function formatProductData(post) {
       srcSet: null,
     },
     product_description: post.product_description,
+    phone_number: post.phone_number,
   };
 }
 
