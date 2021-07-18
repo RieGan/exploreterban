@@ -23,7 +23,7 @@ export const PostCategory = props => (
 
 export const PostCategories = ({
   categories,
-  limit = 3,
+  limit = 69,
   color = "white",
   ...props
 }) => {
