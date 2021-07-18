@@ -51,6 +51,12 @@ export function getPostData(state) {
   return { ...post, isReady: data.isReady, isPage: data.isPage };
 }
 
+export function getProductData(state) {
+  const data = state.source.get(state.router.link);
+  const post = state.source[data.type][data.id];
+  return { ...post, isReady: data.isReady, isPage: data.isPage };
+}
+
 export function formatPostData(state, post) {
   return {
     id: post.id,
@@ -66,8 +72,7 @@ export function formatPostData(state, post) {
   };
 }
 
-export function formatProductData(state, post) {
-  console.log(state, post);
+export function formatProductData(post) {
   return {
     id: post.id,
     owner: post.owner,
@@ -80,7 +85,7 @@ export function formatProductData(state, post) {
       id: post.product_photo.ID,
       alt: post.slug,
       src: post.product_photo.guid,
-      srcSet: "",
+      srcSet: null,
     },
     product_description: post.product_description,
   };

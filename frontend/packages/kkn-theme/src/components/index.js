@@ -8,6 +8,7 @@ import Header from "./header";
 import Loading from "./loading";
 import Page404 from "./page404";
 import Post from "./post/post";
+import ProductPost from "./product-post/post";
 import SearchResults from "./search";
 import Title from "./title";
 import FontFace from "./styles/font-face";
@@ -53,6 +54,7 @@ const Theme = ({ state }) => {
       >
         <Switch>
           <Product when={data.isProductArchive} />
+          <ProductPost when={data.isProduct} />
           <Loading when={data.isFetching} />
           <SearchResults when={data.isSearch} />
           <Archive when={data.isArchive} />

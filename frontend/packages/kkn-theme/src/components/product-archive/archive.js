@@ -4,11 +4,28 @@ import React from "react";
 import ArchiveHeader from "./archive-header";
 import ArchiveItem from "./archive-item";
 import Pagination from "./pagination";
-import { decode } from "frontity";
 
 const Archive = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
+
+  // Property
+  // data = {
+  //   id,
+  //   owner,
+  //   publishDate,
+  //   product_name,
+  //   product_price,
+  //   link,
+  //   location,
+  //   featured_media{
+  //     id,
+  //     alt,
+  //     src,
+  //     srcSet,
+  //   },
+  //   product_description,
+  // }
 
   return (
     <Box bg="accent.50" as="section">
