@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { styled } from "frontity";
 
-const UMKMInfo = (props) => {
+const CityInfo = (props) => {
   const { name, address, phone, product, image_url } = props.info.properties;
   return (
     <Container>
@@ -43,7 +43,7 @@ const UMKMInfo = (props) => {
   );
 };
 
-export default memo(UMKMInfo);
+export default memo(CityInfo);
 
 const Container = styled.div`
   max-width: 320px;

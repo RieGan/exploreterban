@@ -12,7 +12,7 @@ import Product from "./product/post";
 import SearchResults from "./search";
 import Title from "./title";
 import FontFace from "./styles/font-face";
-import UMKMMap from "./maps/umkm-maps";
+import Maps from "./maps/maps";
 
 // CSS
 import mapboxCss from "../styles/mapbox-gl.css";
@@ -58,7 +58,7 @@ const Theme = ({ state }) => {
           <Archive when={data.isArchive} />
           <Post when={data.isPostType} />
           <Page404 when={data.is404} />
-          <UMKMMap when={data.isMapPage} />
+          <Maps when={data.isMapPage} />
         </Switch>
       </Box>
 
