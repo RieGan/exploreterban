@@ -16,6 +16,7 @@ import Boundary from "../../../../../datasets/boundary.json";
 import Legends from "./legends";
 import Pins from "./pins";
 import UMKMInfo from "./umkm-info";
+import WisataInfo from "./wisata-info";
 
 // Icons
 import { AiTwotoneShop } from "react-icons/ai";
@@ -140,7 +141,7 @@ const Maps = ({ state }) => {
           <></>
         )}
 
-        {/* Popup info umkm-point */}
+        {/* Popup info */}
         {popupUMKMInfo && (
           <Popup
             tipSize={10}
@@ -151,6 +152,18 @@ const Maps = ({ state }) => {
             onClose={setPopupUMKMInfo}
           >
             <UMKMInfo info={popupUMKMInfo} />
+          </Popup>
+        )}
+        {popupWisataInfo && (
+          <Popup
+            tipSize={10}
+            anchor="top"
+            longitude={popupWisataInfo.geometry.coordinates[0]}
+            latitude={popupWisataInfo.geometry.coordinates[1]}
+            closeOnClick={false}
+            onClose={setPopupWisataInfo}
+          >
+            <WisataInfo info={popupWisataInfo} />
           </Popup>
         )}
 

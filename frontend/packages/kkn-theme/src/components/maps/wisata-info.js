@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { styled } from "frontity";
 
 const CityInfo = (props) => {
-  const { name, address, phone, product, image_url } = props.info.properties;
+  const { name, address, image_url } = props.info.properties;
   return (
     <Container>
       <div style={{ color: "#ECA41A", fontSize: 13 }}>
@@ -16,18 +16,6 @@ const CityInfo = (props) => {
               <b>Alamat:</b>
             </td>
             <td>{address}</td>
-          </tr>
-          <tr style={{ verticalAlign: "top" }}>
-            <td>
-              <b>Telepon:</b>
-            </td>
-            <td>{phone}</td>
-          </tr>
-          <tr style={{ verticalAlign: "top" }}>
-            <td>
-              <b>Produk:</b>
-            </td>
-            <td>{product}</td>
           </tr>
         </tbody>
       </table>
