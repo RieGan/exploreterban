@@ -2,7 +2,7 @@ const settings = {
   name: "frontend",
   state: {
     frontity: {
-      url: "https://dev-kkn.byeol.my.id",
+      url: "https://byeol.my.id",
       title: "Test Frontity Blog",
       description: "WordPress installation for Frontity development",
     },
