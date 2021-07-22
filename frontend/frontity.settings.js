@@ -32,7 +32,7 @@ const settings = {
             ["UMKM", "/category/umkm/"],
             ["Wisata", "/category/wisata/"],
             ["Produk", "/product/"],
-            ["Maps", "/maps"],
+            ["Peta", "/maps"],
             ["Blog", "/category/blog/"],
           ],
           // the social links
@@ -40,6 +40,14 @@ const settings = {
             ["pinterest", "https://www.pinterest.com/frontity/"],
             ["facebook", "https://www.instagram.com/frontity/"],
             ["twitter", "https://www.twitter.com/frontity/"],
+            ["whatsApp", "https://wa.me/6289612345678"],
+          ],
+          // footer categories
+          categories: [
+            ["Wisata", "/category/wisata"],
+            ["UMKM", "/category/umkm"],
+            ["Blog", "/category/blog"],
+            ["Peta", "/maps"],
           ],
           // color shades to use in the blog
           colors: {

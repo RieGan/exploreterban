@@ -1,21 +1,24 @@
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid, Grid, GridItem } from "@chakra-ui/react";
 import React from "react";
 import { SocialMenu } from "./header/social-menu";
 import { connect } from "frontity";
+import Link from "./link";
+import StyleControl from "./constant/style-control";
+import Language from "./constant/language";
 
-const FooterSection = props => (
+const FooterSection = (props) => (
   <Box
     as="footer"
     pos="relative"
-    bg="primary.900"
+    bg={StyleControl.mainColor}
     py={{ base: "32px", lg: "40px" }}
     {...props}
   />
 );
 
-const FooterSectionGroup = props => (
-  <SimpleGrid
-    columns={{ base: 1, md: 3 }}
+const FooterSectionGroup = (props) => (
+  <Grid
+    templateColumns="repeat(5, 1fr)"
     maxWidth="1150px"
     mx="auto"
     width="90%"
@@ -23,35 +26,40 @@ const FooterSectionGroup = props => (
   />
 );
 
-const FooterSectionItem = props => (
-  <Box padding="24px" color="white" textAlign="center" {...props} />
+const FooterSectionItem = (props) => (
+  <GridItem padding="24px" color="white" textAlign="justify" {...props} />
 );
 
 const Footer = ({ state }) => (
   <FooterSection alignSelf="flex-end">
     <FooterSectionGroup>
-      <FooterSectionItem
-        fontWeight="bold"
-        fontFamily="heading"
-        textTransform="uppercase"
-      >
-        © {new Date().getFullYear()} Frontity
+      <FooterSectionItem colSpan={3} fontFamily="Poppins" lineHeight="8">
+        <b>Tentang Kami</b>
+        <br></br>
+        {Language.indonesian.aboutUs}
+      </FooterSectionItem>
+      <FooterSectionItem fontFamily="Poppins" lineHeight="8">
+        <b>Kategori</b>
+        {state.theme.categories.map(([name, link]) => (
+          <>
+            <br></br>
+            <Link link={link} textTransform="capitalize">
+              {name}
+            </Link>
+          </>
+        ))}
       </FooterSectionItem>
 
-      <FooterSectionItem borderColor="accent.400">
-        <SocialMenu
-          ml="0"
-          justifyContent="center"
-          menu={state.theme.socialLinks}
-        />
-      </FooterSectionItem>
-
-      <FooterSectionItem
-        fontWeight="bold"
-        fontFamily="heading"
-        textTransform="uppercase"
-      >
-        Made with Frontity
+      <FooterSectionItem fontFamily="Poppins" lineHeight="8">
+        <b>Kontak</b>
+        {state.theme.socialLinks.map(([name, link]) => (
+          <>
+            <br></br>
+            <Link link={link} textTransform="capitalize">
+              {name}
+            </Link>
+          </>
+        ))}
       </FooterSectionItem>
     </FooterSectionGroup>
   </FooterSection>
