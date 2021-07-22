@@ -1,5 +1,5 @@
 import { Box, SimpleGrid, Grid, GridItem } from "@chakra-ui/react";
-import React from "react";
+import React, { Fragment } from "react";
 import { SocialMenu } from "./header/social-menu";
 import { connect } from "frontity";
 import Link from "./link";
@@ -18,7 +18,7 @@ const FooterSection = (props) => (
 
 const FooterSectionGroup = (props) => (
   <Grid
-    templateColumns="repeat(5, 1fr)"
+    templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(5, 1fr)" }}
     maxWidth="1150px"
     mx="auto"
     width="90%"
@@ -41,24 +41,24 @@ const Footer = ({ state }) => (
       <FooterSectionItem fontFamily="Poppins" lineHeight="8">
         <b>Kategori</b>
         {state.theme.categories.map(([name, link]) => (
-          <>
-            <br></br>
+          <Fragment key={name}>
+            <br />
             <Link link={link} textTransform="capitalize">
               {name}
             </Link>
-          </>
+          </Fragment>
         ))}
       </FooterSectionItem>
 
       <FooterSectionItem fontFamily="Poppins" lineHeight="8">
         <b>Kontak</b>
         {state.theme.socialLinks.map(([name, link]) => (
-          <>
+          <Fragment key={name}>
             <br></br>
             <Link link={link} textTransform="capitalize">
               {name}
             </Link>
-          </>
+          </Fragment>
         ))}
       </FooterSectionItem>
     </FooterSectionGroup>
