@@ -2,10 +2,11 @@ import { Box, Stack } from "@chakra-ui/react";
 import { styled } from "frontity";
 import React from "react";
 import FrontityLink from "../link";
+import StyleControl from "../constant/style-control";
 
 const Link = styled(FrontityLink)`
   position: relative;
-  color: #fff;
+  color: ${StyleControl.navPassive};
   text-decoration: none;
 
   &:after {
@@ -22,12 +23,12 @@ const Link = styled(FrontityLink)`
   &:hover {
     &:after {
       bottom: -5px;
-      background-color: ${p => p.theme.colors.accent[400]};
+      background-color: ${(p) => p.theme.colors.accent[400]};
     }
   }
 `;
 
-export const SiteMenu = props => (
+export const SiteMenu = (props) => (
   <Stack
     ml="50px"
     spacing="50px"
