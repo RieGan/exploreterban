@@ -83,7 +83,7 @@ const settings = {
       name: "@frontity/wp-source",
       state: {
         source: {
-          url: "https://dev-kkn.byeol.my.id",
+          url: "https://byeol.my.id",
           postTypes: [
             {
               type: "product", // type slug
