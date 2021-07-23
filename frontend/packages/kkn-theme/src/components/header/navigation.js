@@ -8,23 +8,19 @@ const Link = styled(FrontityLink)`
   position: relative;
   color: ${StyleControl.navPassive};
   text-decoration: none;
+  padding-right: 10px;
+  padding-left: 10px;
 
-  &:after {
+ &:hover {
+    background: #E5E5E5;
+    border-radius: 19px;
     transition: bottom ease 0.25s, background-color ease 0.25s;
-    content: "";
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: transparent;
   }
-
-  &:hover {
-    &:after {
-      bottom: -5px;
-      background-color: ${(p) => p.theme.colors.accent[400]};
-    }
+  &:focus {
+    background: ${StyleControl.mainColor};
+    border-radius: 19px;
+    color: ${StyleControl.headerColor};
+    transition: bottom ease 0.25s, background-color ease 0.25s;
   }
 `;
 
@@ -46,9 +42,10 @@ const SiteMenuItem = ({ link, ...props }) => (
     as="li"
     color="white"
     fontSize={{ base: "sm", lg: "md" }}
-    fontWeight="medium"
-    fontFamily="Kelson"
-    textTransform="uppercase"
+    fontWeight="500"
+    fontStyle="normal"
+    fontFamily="Poppins"
+    textTransform="capitalize"
     position="relative"
     cursor="pointer"
     {...props}

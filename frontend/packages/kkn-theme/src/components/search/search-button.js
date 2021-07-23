@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
+import StyleControl from "../constant/style-control";
 
 const SearchButton = props => (
   <Box
@@ -13,11 +14,11 @@ const SearchButton = props => (
     _hover={{ bg: "white" }}
     flexShrink="0"
     boxSize="46px"
-    bg="accent.400"
+    bg={StyleControl.mainColor}
     ml={{ base: "auto", lg: "3rem" }}
     {...props}
   >
-    <Box boxSize={6} color="primary.700" as={IoIosSearch} />
+    <Box boxSize={6} color={StyleControl.headerColor} _hover={{color: "black"}} as={IoIosSearch} />
   </Box>
 );
 

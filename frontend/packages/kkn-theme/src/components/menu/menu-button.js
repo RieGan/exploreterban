@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 import { IoIosMenu } from "react-icons/io";
+import StyleControl from "../constant/style-control";
 
 const MenuButton = forwardRef((props, ref) => (
   <Box
@@ -14,7 +15,7 @@ const MenuButton = forwardRef((props, ref) => (
     ml={{ base: "12px", sm: "0" }}
     {...props}
   >
-    <Box boxSize={10} color="accent.400" as={IoIosMenu} />
+    <Box boxSize={10} color={StyleControl.mainColor} as={IoIosMenu} />
   </Box>
 ));
 
