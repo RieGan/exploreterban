@@ -2,9 +2,10 @@ import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
 import Link from "../link";
 import MobileMenu from "../menu";
-import { isUrl, omitConnectProps } from "../helpers";
-import { connect } from "frontity";
+import { omitConnectProps } from "../helpers";
+import {connect, styled} from "frontity";
 import StyleControl from "../constant/style-control";
+import LogoWebiste from "../../assets/logo-website.png"
 
 const SiteHeader = (props) => (
   <Box
@@ -30,30 +31,47 @@ const SiteHeaderInner = (props) => (
     {...props}
   />
 );
+// const BoxLogo = styled(Box)`
+//     width: 210px;
+//     height: 210px;
+//
+//     background: #FFFFFF;
+//     margin-top: 75px;
+// `
+const BoxShadow = {
+    boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
+    marginTop: "75px",
+    background: "#FFFFFF"
+}
+const LogoStyle = {
+    margin: "auto",
+    width: "150px",
+    paddingTop: "30px"
+}
 
-const Logo = ({ isImage = true, src }) =>
-  isImage ? (
-    <Box as="img" src={src} width="120px" />
-  ) : (
-    <Box
-      fontSize="2xl"
-      color="black"
-      fontFamily="heading"
-      textTransform="uppercase"
-      fontWeight="bold"
-    >
-      {src}
-    </Box>
-  );
-
-const SiteLogo = connect(({ state, ...props }) => {
+const SiteLogo = connect(({ state, actions, ...props }) => {
   // check if the logo is a url,
   // we assume, if it's a url, it points to an image, else it's a text
-  const isImage = isUrl(state.theme.logo);
   return (
     <Box display="block" flexShrink="0" {...omitConnectProps(props)}>
       <Link link="/">
-        <Logo isImage={isImage} src={state.theme.logo} />
+          <Box
+              display={{ base: "none", lg:"flex" }}
+              width="210px"
+              height="210px"
+              style={BoxShadow}>
+              <img style={LogoStyle} src={LogoWebiste} alt={state.theme.logo}/>
+          </Box>
+          <Box
+              fontSize="2xl"
+              color="black"
+              fontFamily="heading"
+              textTransform="uppercase"
+              fontWeight="bold"
+              display={{ base: "flex", lg: "none" }}
+          >
+              {state.theme.logo}
+          </Box>
       </Link>
     </Box>
   );

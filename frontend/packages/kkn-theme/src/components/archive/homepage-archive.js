@@ -1,13 +1,35 @@
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
-import { connect } from "frontity";
+import { Box, Flex, Heading, SimpleGrid} from "@chakra-ui/react";
+import { connect, styled } from "frontity";
 import React from "react";
-import { FeaturedPostSection } from "../featured-post/featured-post";
+// import { FeaturedPostSection } from "../featured-post/featured-post";
 import { formatPostData, splitPosts, getFeaturedProduct } from "../helpers";
 import { Newsletter } from "../newsletter";
 import ArchiveItem from "./archive-item";
 import ProductItem from "./product-item";
 import { PaginationButton } from "./pagination";
+import StyleControl from "../constant/style-control";
+import Language from "../constant/language";
+import WelcomingBackground from "../../assets/welcoming-bg.png"
 
+const WelcomingStyle = {
+  background: `linear-gradient(90deg, #9C9C42 1.02%, rgba(156, 156, 66, 0.2) 101.02%),url(${WelcomingBackground})`
+}
+const WelcomingTitle = styled.p`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 72px;
+  color: #FFFFFF;
+`
+const WelcomingCaption = styled.p`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #FFFFFF;
+`
 const HomepageArchive = ({ state, libraries }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
@@ -20,11 +42,22 @@ const HomepageArchive = ({ state, libraries }) => {
     product = getFeaturedProduct(state, productData.items, 4);
   }
 
+
   return (
-    <Box bg="accent.50" as="section">
-      <FeaturedPostSection
-        data={firstThreePosts.map((post) => formatPostData(state, post))}
-      />
+    <Box bg={StyleControl.pageColor} as="section">
+      {/*<FeaturedPostSection*/}
+      {/*  data={firstThreePosts.map((post) => formatPostData(state, post))}*/}
+      {/*/>*/}
+        <Flex style={WelcomingStyle} height={{base: "400px", lg: "600px"}} align="center" justifyContent="center">
+            <Box w="80vw">
+              <WelcomingTitle>
+                {Language.indonesian.welcomeTitle}
+              </WelcomingTitle>
+              <WelcomingCaption>
+                {Language.indonesian.welcomeCaption}
+              </WelcomingCaption>
+            </Box>
+        </Flex>
       {/* If in home ("/") */}
       {state.router.link == "/" && (
         <Box

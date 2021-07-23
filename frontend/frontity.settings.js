@@ -25,7 +25,7 @@ const settings = {
           // show background pattern
           showBackgroundPattern: true,
           // show social links
-          showSocialLinks: true,
+          showSocialLinks: false,
           // the top-level navigation labels and links
           menu: [
             ["Home", "/"],

@@ -66,6 +66,7 @@ const chakraTheme = {
       },
       isSearchModalOpen: false,
       isMobileMenuOpen: false,
+      // isShowFullLogo: true,
       autoPreFetch: "all",
     },
   },
@@ -85,6 +86,14 @@ const chakraTheme = {
       closeSearchModal: ({ state }) => {
         state.theme.isSearchModalOpen = false;
       },
+      // openFullLogo: ({ state }) =>  {
+      //   state.theme.isShowFullLogo = true;
+      // },
+      // closeFullLogo: ({ state }) =>  {
+      //   state.theme.isShowFullLogo = false;
+      //   console.log(window.pageYOffset);
+      //   console.log(state.theme.isShowFullLogo)
+      // },
       init: ({ libraries }) => {
         libraries.source.handlers.push(mapPageHandler);
       },
@@ -93,6 +102,7 @@ const chakraTheme = {
           actions.source.fetch("/product/");
         }
       },
+
     },
   },
   libraries: {
