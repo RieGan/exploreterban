@@ -3,9 +3,9 @@ import React from "react";
 import Link from "../link";
 import MobileMenu from "../menu";
 import { omitConnectProps } from "../helpers";
-import {connect, styled} from "frontity";
+import {connect} from "frontity";
 import StyleControl from "../constant/style-control";
-import LogoWebiste from "../../assets/logo-website.png"
+import LogoWebiste from "../../assets/logo-website.webp"
 
 const SiteHeader = (props) => (
   <Box
