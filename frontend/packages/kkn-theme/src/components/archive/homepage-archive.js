@@ -9,7 +9,7 @@ import ProductItem from "./product-item";
 import { PaginationButton } from "./pagination";
 import StyleControl from "../constant/style-control";
 import Language from "../constant/language";
-import WelcomingBackground from "../../assets/welcoming-bg.png"
+import WelcomingBackground from "../../assets/welcoming-bg.webp"
 
 const WelcomingStyle = {
   background: `linear-gradient(90deg, #9C9C42 1.02%, rgba(156, 156, 66, 0.2) 101.02%),url(${WelcomingBackground})`
