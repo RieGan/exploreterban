@@ -27,17 +27,6 @@ const MenuItem = ({ index, children, mb, link, ...rest }) => (
       link={link}
     >
       <Box
-        as="span"
-        pos="absolute"
-        top="50%"
-        transform="translateY(-50%)"
-        fontSize="md"
-        letterSpacing="-0.024"
-        lineHeight="1.23"
-      >
-        {index}
-      </Box>
-      <Box
         paddingLeft={10}
         letterSpacing="-0.004em"
         lineHeight="1.39"

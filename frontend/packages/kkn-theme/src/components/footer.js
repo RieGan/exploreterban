@@ -10,7 +10,8 @@ import LogoKKN from "../assets/logo-kkn.png";
 import LogoUnit from "../assets/logo-unit.png";
 
 const FooterCategory = styled.b`
-  font-size: 16px
+  font-size: 18px;
+  color: ${StyleControl.accent200};
 `
 
 const FooterSection = (props) => (
@@ -41,7 +42,11 @@ const FooterSectionItem = (props) => (
 const Footer = ({ state }) => (
   <FooterSection fontSize={14} alignSelf="flex-end">
     <FooterSectionGroup>
-      <FooterSectionItem colSpan={3} fontFamily="Poppins" lineHeight="8">
+      <FooterSectionItem
+        colSpan={{ base: 1, md: 3 }}
+        fontFamily="Poppins"
+        lineHeight="8"
+      >
         <FooterCategory>Tentang Kami</FooterCategory>
         <br></br>
         {Language.indonesian.aboutUs}
@@ -51,7 +56,7 @@ const Footer = ({ state }) => (
         {state.theme.categories.map(([name, link]) => (
           <Fragment key={name}>
             <br />
-            <Link link={link} textTransform="capitalize">
+            <Link _hover={{ textDecoration: 'underline' }} link={link} textTransform="capitalize">
               {name}
             </Link>
           </Fragment>
@@ -62,16 +67,16 @@ const Footer = ({ state }) => (
         {state.theme.socialLinks.map(([name, link]) => (
           <Fragment key={name}>
             <br></br>
-            <Link link={link} textTransform="capitalize">
+            <Link _hover={{ textDecoration: 'underline' }} link={link} textTransform="capitalize">
               {name}
             </Link>
           </Fragment>
         ))}
       </FooterSectionItem>
-      <FooterSectionItem colSpan={2}>
+      <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
         <img style={{ maxHeight: "120px" }} src={LogoUGM}></img>
       </FooterSectionItem>
-      <FooterSectionItem colSpan={2}>
+      <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
         <img style={{ maxHeight: "120px" }} src={LogoUnit}></img>
       </FooterSectionItem>
       <FooterSectionItem>
