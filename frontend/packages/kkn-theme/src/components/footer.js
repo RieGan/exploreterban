@@ -1,13 +1,17 @@
 import { Box, SimpleGrid, Grid, GridItem } from "@chakra-ui/react";
 import React, { Fragment } from "react";
 import { SocialMenu } from "./header/social-menu";
-import { connect } from "frontity";
+import { connect, styled } from "frontity";
 import Link from "./link";
 import StyleControl from "./constant/style-control";
 import Language from "./constant/language";
 import LogoUGM from "../assets/logo-ugm.png";
 import LogoKKN from "../assets/logo-kkn.png";
 import LogoUnit from "../assets/logo-unit.png";
+
+const FooterCategory = styled.b`
+  font-size: 16px
+`
 
 const FooterSection = (props) => (
   <Box
@@ -38,12 +42,12 @@ const Footer = ({ state }) => (
   <FooterSection fontSize={14} alignSelf="flex-end">
     <FooterSectionGroup>
       <FooterSectionItem colSpan={3} fontFamily="Poppins" lineHeight="8">
-        <b>Tentang Kami</b>
+        <FooterCategory>Tentang Kami</FooterCategory>
         <br></br>
         {Language.indonesian.aboutUs}
       </FooterSectionItem>
       <FooterSectionItem fontFamily="Poppins" lineHeight="8">
-        <b>Kategori</b>
+        <FooterCategory>Kategori</FooterCategory>
         {state.theme.categories.map(([name, link]) => (
           <Fragment key={name}>
             <br />
@@ -54,7 +58,7 @@ const Footer = ({ state }) => (
         ))}
       </FooterSectionItem>
       <FooterSectionItem fontFamily="Poppins" lineHeight="8">
-        <b>Kontak</b>
+        <FooterCategory>Kontak</FooterCategory>
         {state.theme.socialLinks.map(([name, link]) => (
           <Fragment key={name}>
             <br></br>
