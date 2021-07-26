@@ -37,7 +37,11 @@ const FooterSectionItem = (props) => (
 const Footer = ({ state }) => (
   <FooterSection fontSize={14} alignSelf="flex-end">
     <FooterSectionGroup>
-      <FooterSectionItem colSpan={3} fontFamily="Poppins" lineHeight="8">
+      <FooterSectionItem
+        colSpan={{ base: 1, md: 3 }}
+        fontFamily="Poppins"
+        lineHeight="8"
+      >
         <b>Tentang Kami</b>
         <br></br>
         {Language.indonesian.aboutUs}
@@ -64,10 +68,10 @@ const Footer = ({ state }) => (
           </Fragment>
         ))}
       </FooterSectionItem>
-      <FooterSectionItem colSpan={2}>
+      <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
         <img style={{ maxHeight: "120px" }} src={LogoUGM}></img>
       </FooterSectionItem>
-      <FooterSectionItem colSpan={2}>
+      <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
         <img style={{ maxHeight: "120px" }} src={LogoUnit}></img>
       </FooterSectionItem>
       <FooterSectionItem>
