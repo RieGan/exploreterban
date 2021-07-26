@@ -35,7 +35,7 @@ const FooterSectionItem = (props) => (
 );
 
 const Footer = ({ state }) => (
-  <FooterSection alignSelf="flex-end">
+  <FooterSection fontSize={14} alignSelf="flex-end">
     <FooterSectionGroup>
       <FooterSectionItem colSpan={3} fontFamily="Poppins" lineHeight="8">
         <b>Tentang Kami</b>
