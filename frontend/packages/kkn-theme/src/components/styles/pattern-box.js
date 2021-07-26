@@ -3,6 +3,7 @@ import React from "react";
 import Section from "./section";
 import tileGreen from "../../assets/pattern-tile-green.svg";
 import tileLight from "../../assets/pattern-tile-light-fade.svg";
+import StyleControl from "../constant/style-control";
 
 /**
  * @param {React.ComponentProps<typeof Box>} props
@@ -10,7 +11,7 @@ import tileLight from "../../assets/pattern-tile-light-fade.svg";
 export const PatternBox = ({ showPattern = true, ...props }) => (
   <Box
     as="section"
-    bg="primary.700"
+    bg={StyleControl.mainColor}
     borderTop="10px solid"
     borderColor="accent.400"
     {...(showPattern && {
