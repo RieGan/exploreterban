@@ -44,13 +44,19 @@ const Post = ({ state, actions }) => {
   if (!postData.isReady) return null;
 
   return (
-    <Box bg="accent.50" as="section">
+    <Box bg={StyleControl.pageColor} as="section">
       <PostHeader
         showPattern={state.theme.showBackgroundPattern}
         // taxonomy={"Produk"}
         title={"Detail Produk"}
       />
-      <Section bg="white" pb="80px" size="lg" borderRadius="lg">
+      <Section
+        boxShadow="lg"
+        bg="white"
+        pb="80px"
+        size="lg"
+        borderRadius="lg"
+      >
         <Content
           as={Section}
           px={{ base: "32px", md: "0" }}

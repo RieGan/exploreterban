@@ -12,7 +12,7 @@ const PostHeader = ({ taxonomy, title, ...props }) => (
         mt="8px"
         textTransform="capitalize"
         fontSize={{ base: "5xl", md: "6xl" }}
-        color="accent.400"
+        color="white"
       >
         {title}
       </Heading>
