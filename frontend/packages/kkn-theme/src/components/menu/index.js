@@ -20,8 +20,8 @@ const Menu = ({ state, actions }) => {
         onClose={closeMobileMenu}
       >
         <Stack mt="20%" spacing={6} direction="column" as="ul" ml="0">
-          {state.theme.menu.map(([name, link], index) => (
-            <MenuItem link={link} key={name} index={`0${index + 1}`}>
+          {state.theme.menu.map(([name, link]) => (
+            <MenuItem link={link} key={name}>
               {name}
             </MenuItem>
           ))}
