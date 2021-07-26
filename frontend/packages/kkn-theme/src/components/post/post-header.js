@@ -34,7 +34,7 @@ const PostHeader = ({
     {/* Don't show the author if we're on a page type */}
     {!isPage && author && (
       <Text fontSize="lg">
-        by{" "}
+        oleh{" "}
         <Link fontWeight="bold" color="accent.400" link={author.link}>
           {decode(author.name)}
         </Link>

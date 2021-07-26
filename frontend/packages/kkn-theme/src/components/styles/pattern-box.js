@@ -43,7 +43,7 @@ export const LightPatternBox = React.forwardRef(
   ({ showPattern = true, ...props }, ref) => (
     <Box
       ref={ref}
-      bg="accent.50"
+      bg={StyleControl.pageColor}
       pt="40px"
       pos="relative"
       zIndex={0}

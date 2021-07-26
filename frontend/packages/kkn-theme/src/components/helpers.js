@@ -138,18 +138,18 @@ export function omitConnectProps(props) {
 }
 
 const monthNames = [
-  "January",
-  "February",
-  "March",
+  "Januari",
+  "Februari",
+  "Maret",
   "April",
-  "May",
-  "June",
-  "July",
-  "August",
+  "Mei",
+  "Juni",
+  "Juli",
+  "Agustus",
   "September",
-  "October",
+  "Oktober",
   "Novemeber",
-  "December",
+  "Desember",
 ];
 
 const formatDay = (day) => {
@@ -166,7 +166,7 @@ export function formatDate(date) {
   const month = jsDate.getMonth() + 1;
   const year = jsDate.getFullYear();
 
-  return `${formatDay(day)} ${monthNames[month]}, ${year}`;
+  return `${day} ${monthNames[month]} ${year}`;
 }
 
 export function isUrl(str) {
