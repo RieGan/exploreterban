@@ -19,7 +19,7 @@ const SearchForm = props => {
       {...form}
     >
       <Input
-        placeholder="Type and Hit Enter"
+        placeholder="Ketik kata kunci lalu Enter"
         variant="flushed"
         size="lg"
         fontSize={{ base: "24px", md: "32px" }}
