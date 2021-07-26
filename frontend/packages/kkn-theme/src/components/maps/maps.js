@@ -108,8 +108,8 @@ const Maps = ({ state }) => {
     <>
       <MapGL
         {...viewport}
-        width="100vw"
-        height="100vh"
+        width="98vw"
+        height="98vh"
         mapStyle={state.mapbox.style}
         onViewportChange={setViewport}
         mapboxApiAccessToken={state.mapbox.mapboxAccessToken}
