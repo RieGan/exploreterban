@@ -21,7 +21,7 @@ const settings = {
       state: {
         theme: {
           // The logo can be a text or an image url
-          logo: "Mulusan",
+          logo: "Desa Penari",
           // show background pattern
           showBackgroundPattern: true,
           // show social links

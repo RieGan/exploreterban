@@ -74,12 +74,13 @@ const ProductPreview = ({data,...rest}) => {
                 bg="white"
                 as="article"
                 shadow="md"
+                borderRadius="15px"
                 {...rest}
             >
                 <br/>
                 {/* Use the frontity settings for featuredPost here */}
                 <Center>
-                    <Image boxSize="200px" objectFit="cover" src={featured_media.src}/>
+                    <Image borderRadius="10px" boxSize="200px" objectFit="cover" src={featured_media.src}/>
                 </Center>
                 <Flex p="40px" flexGrow="1" direction="column">
                     <ProductName>
@@ -89,7 +90,7 @@ const ProductPreview = ({data,...rest}) => {
                     <ProductPrice>{currencyFormat(product_price)}</ProductPrice>
                     <br/>
                     <Center>
-                        <ProductButton link={product_link}/>
+                        <ProductButton link={link}/>
                     </Center>
                 </Flex>
             </Flex>
