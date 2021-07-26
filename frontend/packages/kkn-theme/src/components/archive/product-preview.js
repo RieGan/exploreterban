@@ -80,10 +80,9 @@ const ProductPreview = ({data,...rest}) => {
                 borderRadius="15px"
                 {...rest}
             >
-                <br/>
                 {/* Use the frontity settings for featuredPost here */}
                 <Center>
-                    <Image borderRadius="10px" boxSize="200px" marginTop="10px" objectFit="cover" src={featured_media.src}/>
+                    <Image borderRadius="10px" boxSize="200px" marginTop="24px" objectFit="cover" src={featured_media.src}/>
                 </Center>
                 <Flex p="40px" flexGrow="1" direction="column">
                     <ProductName>
