@@ -5,9 +5,9 @@ import { connect } from "frontity";
 import Link from "./link";
 import StyleControl from "./constant/style-control";
 import Language from "./constant/language";
-import LogoUGM from "../assets/logo-ugm.webp";
-import LogoKKN from "../assets/logo-kkn.webp";
-import LogoUnit from "../assets/logo-unit.webp";
+import LogoUGM from "../assets/logo-ugm.png";
+import LogoKKN from "../assets/logo-kkn.png";
+import LogoUnit from "../assets/logo-unit.png";
 
 const FooterSection = (props) => (
   <Box

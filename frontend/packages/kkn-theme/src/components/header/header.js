@@ -5,7 +5,7 @@ import MobileMenu from "../menu";
 import { omitConnectProps } from "../helpers";
 import {connect} from "frontity";
 import StyleControl from "../constant/style-control";
-import LogoWebiste from "../../assets/logo-website.webp"
+import LogoWebiste from "../../assets/logo-website.png"
 
 const SiteHeader = (props) => (
   <Box
