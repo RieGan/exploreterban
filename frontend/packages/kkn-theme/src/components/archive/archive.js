@@ -60,7 +60,7 @@ const Archive = ({ state }) => {
         )}
 
         {data.isProductArchive && (
-          <SimpleGrid columns={{ base: 1, md: 4 }} spacing="40px">
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 3, xl: 4 }} spacing="40px">
             {data.items.map(({ type, id }) => {
               const item = state.source[type][id];
               return <ProductItem key={item.id} item={item} />;

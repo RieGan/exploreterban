@@ -3,9 +3,9 @@ import React from "react";
 import Link from "../link";
 import MobileMenu from "../menu";
 import { omitConnectProps } from "../helpers";
-import {connect} from "frontity";
+import { connect } from "frontity";
 import StyleControl from "../constant/style-control";
-import LogoWebiste from "../../assets/logo-website.png"
+import LogoWebiste from "../../assets/logo-website.png";
 
 const SiteHeader = (props) => (
   <Box
@@ -39,15 +39,15 @@ const SiteHeaderInner = (props) => (
 //     margin-top: 75px;
 // `
 const BoxShadow = {
-    boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
-    marginTop: "75px",
-    background: "#FFFFFF"
-}
+  boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
+  marginTop: "75px",
+  background: "#FFFFFF",
+};
 const LogoStyle = {
-    margin: "auto",
-    width: "150px",
-    paddingTop: "30px"
-}
+  margin: "auto",
+  width: "150px",
+  paddingTop: "30px",
+};
 
 const SiteLogo = connect(({ state, actions, ...props }) => {
   // check if the logo is a url,
@@ -55,23 +55,24 @@ const SiteLogo = connect(({ state, actions, ...props }) => {
   return (
     <Box display="block" flexShrink="0" {...omitConnectProps(props)}>
       <Link link="/">
-          <Box
-              display={{ base: "none", lg:"flex" }}
-              width="210px"
-              height="210px"
-              style={BoxShadow}>
-              <img style={LogoStyle} src={LogoWebiste} alt={state.theme.logo}/>
-          </Box>
-          <Box
-              fontSize="2xl"
-              color="black"
-              fontFamily="heading"
-              textTransform="uppercase"
-              fontWeight="bold"
-              display={{ base: "flex", lg: "none" }}
-          >
-              {state.theme.logo}
-          </Box>
+        <Box
+          display={{ base: "none", lg: "flex" }}
+          width="210px"
+          height="210px"
+          style={BoxShadow}
+        >
+          <img style={LogoStyle} src={LogoWebiste} alt={state.theme.logo} />
+        </Box>
+        <Box
+          fontSize="2xl"
+          color={StyleControl.mainColor}
+          fontFamily="heading"
+          textTransform="uppercase"
+          fontWeight="bold"
+          display={{ base: "flex", lg: "none" }}
+        >
+          {state.theme.logo}
+        </Box>
       </Link>
     </Box>
   );

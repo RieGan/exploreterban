@@ -3,8 +3,8 @@ const settings = {
   state: {
     frontity: {
       url: "https://byeol.my.id",
-      title: "Test Frontity Blog",
-      description: "WordPress installation for Frontity development",
+      title: "KKN UGM",
+      description: "Website Desa Penari dari KKN UGM Yogyakarta 2021",
     },
     mapbox: {
       mapboxAccessToken:
@@ -21,7 +21,7 @@ const settings = {
       state: {
         theme: {
           // The logo can be a text or an image url
-          logo: "Frontity",
+          logo: "Mulusan",
           // show background pattern
           showBackgroundPattern: true,
           // show social links
