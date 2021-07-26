@@ -12,7 +12,7 @@ const settings = {
       latitude: -7.769137,
       longitude: 110.377945,
       zoom: 15,
-      style: "mapbox://styles/qaqaenbersama/ckr50ef8i0jyi19mz06qyjbi7",
+      style: "mapbox://styles/mapbox/light-v10",
     },
   },
   packages: [
