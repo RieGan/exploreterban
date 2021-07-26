@@ -13,6 +13,8 @@ font-weight: 600;
 font-size: 16px;
 line-height: 24px;
 text-align: center;
+margin-bottom: 16px; 
+margin-top: 10px;
 `
 
 const ProductPrice = styled.p`
@@ -23,6 +25,7 @@ font-size: 18px;
 line-height: 27px;
 text-align: center;
 color: ${StyleControl.mainColor};
+margin-bottom: 16px;
 `
 
 const ProductBox = styled(Box)`
@@ -80,15 +83,13 @@ const ProductPreview = ({data,...rest}) => {
                 <br/>
                 {/* Use the frontity settings for featuredPost here */}
                 <Center>
-                    <Image borderRadius="10px" boxSize="200px" objectFit="cover" src={featured_media.src}/>
+                    <Image borderRadius="10px" boxSize="200px" marginTop="10px" objectFit="cover" src={featured_media.src}/>
                 </Center>
                 <Flex p="40px" flexGrow="1" direction="column">
                     <ProductName>
                         {product_name}
                     </ProductName>
-                    <br/>
                     <ProductPrice>{currencyFormat(product_price)}</ProductPrice>
-                    <br/>
                     <Center>
                         <ProductButton link={link}/>
                     </Center>
