@@ -11,8 +11,14 @@ const FeaturedMedia = ({ state, featured_media, ...props }) => {
   if (noImgProps) return null;
 
   return (
-    <Box as="figure" mt={4} height="500px" {...props}>
-      <Box as={Image} boxSize="100%" objectFit="cover" {...featured_media} />
+    <Box as="figure" mt={4} {...props}>
+      <Box
+        borderRadius="lg"
+        as={Image}
+        boxSize="50%"
+        objectFit="cover"
+        {...featured_media}
+      />
     </Box>
   );
 };

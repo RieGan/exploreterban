@@ -1,4 +1,16 @@
-import { Box } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  GridItem,
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Td,
+  Th,
+  Tfoot,
+  Button,
+} from "@chakra-ui/react";
 import { connect, styled } from "frontity";
 import React, { useEffect } from "react";
 import List from "../archive";
@@ -7,30 +19,18 @@ import FeaturedMedia from "./featured-media";
 import PostHeader from "./post-header";
 import { getProductData, formatProductData } from "../helpers";
 import Link from "../link";
+import StyleControl from "../constant/style-control";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
+const tableDataStyle = {
+  verticalAlign: "top",
+  whiteSpace: "nowrap",
+  fontStyle: "italic",
+};
 
 const Post = ({ state, actions }) => {
   const postData = getProductData(state);
   const post = formatProductData(postData);
-
-  // Property
-  // post = {
-  //   id,
-  //   owner,
-  //   publishDate,
-  //   product_name,
-  //   product_price,
-  //   link,
-  //   location,
-  //   featured_media{
-  //     id,
-  //     alt,
-  //     src,
-  //     srcSet,
-  //   },
-  //   product_description,
-  //   phone_number,
-  //   product_link,
-  // }
 
   // Once the post has loaded in the DOM, prefetch both the
   // home posts and the list component so if the user visits
@@ -47,33 +47,84 @@ const Post = ({ state, actions }) => {
     <Box bg="accent.50" as="section">
       <PostHeader
         showPattern={state.theme.showBackgroundPattern}
-        taxonomy={"Produk"}
-        title={"UMKM"}
+        // taxonomy={"Produk"}
+        title={"Detail Produk"}
       />
-
-      {/* Look at the settings to see if we should include the featured image */}
-      <Section bg="white" pb="80px" size="lg">
-        {post.featured_media != null && (
-          <FeaturedMedia featured_media={post.featured_media} />
-        )}
-
+      <Section bg="white" pb="80px" size="lg" borderRadius="lg">
         <Content
           as={Section}
           px={{ base: "32px", md: "0" }}
-          size="md"
+          size="lg"
           pt="50px"
         >
-          <b>Nama: {post.product_name}</b>
-          <p>Deskripsi: {post.product_description}</p>
-          <p>Harga: {post.product_price}</p>
-          <p>Lokasi: {post.location}</p>
-          <p>Owner: {post.owner}</p>
-          <p>Nomor Telepon: {post.phone_number}</p>
-          {post.product_link && (
-            <Link link={post.product_link}>Beli Produk</Link>
-          )}
+          <Grid
+            templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
+            maxWidth="1150px"
+            mx="auto"
+            width="90%"
+            fontFamily="Poppins"
+          >
+            <GridItem padding="24px" color="white" textAlign="justify">
+              {post.featured_media != null && (
+                <FeaturedMedia featured_media={post.featured_media} />
+              )}
+            </GridItem>
+            <GridItem
+              colSpan={2}
+              padding="24px"
+              // color="white"
+              textAlign="justify"
+            >
+              <Table variant="unstyled" size="sm">
+                <Thead h={20}>
+                  <Tr>
+                    <Td colSpan={2} fontWeight="bold" fontSize={24}>
+                      {post.product_name}
+                    </Td>
+                  </Tr>
+                </Thead>
+                <Tbody fontSize={18}>
+                  <Tr>
+                    <Td style={tableDataStyle}>Deskripsi</Td>
+                    <Td>{post.product_description}</Td>
+                  </Tr>
+                  <Tr>
+                    <Td style={tableDataStyle}>Harga</Td>
+                    <Td>{post.product_price}</Td>
+                  </Tr>
+                  <Tr>
+                    <Td style={tableDataStyle}>Lokasi</Td>
+                    <Td>{post.location}</Td>
+                  </Tr>
+                  <Tr>
+                    <Td style={tableDataStyle}>Owner</Td>
+                    <Td>{post.owner}</Td>
+                  </Tr>
+                  <Tr>
+                    <Td style={tableDataStyle}>Nomor Telepon</Td>
+                    <Td>{post.phone_number}</Td>
+                  </Tr>
+                </Tbody>
+              </Table>
+            </GridItem>
+          </Grid>
         </Content>
       </Section>
+      <Box textAlign="center" mx="auto" h={120}>
+        {post.product_link && (
+          <Button
+            size="md"
+            bgColor={StyleControl.mainColor}
+            marginTop={10}
+            color="white"
+          >
+            <AiOutlineShoppingCart color="white" size={25} />
+            <Link link={post.product_link} style={{ padding: 10 }}>
+              Beli
+            </Link>
+          </Button>
+        )}
+      </Box>
     </Box>
   );
 };
