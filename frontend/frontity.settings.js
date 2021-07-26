@@ -28,12 +28,11 @@ const settings = {
           showSocialLinks: false,
           // the top-level navigation labels and links
           menu: [
-            ["Home", "/"],
-            ["UMKM", "/category/umkm/"],
-            ["Wisata", "/category/wisata/"],
-            ["Produk", "/product/"],
+            ["Beranda", "/"],
+            ["Desa", "/category/desa/"],
+            ["Produk UMKM", "/product/"],
             ["Peta", "/maps"],
-            ["Blog", "/category/blog/"],
+            ["Artikel Edukasi", "/category/blog/"],
           ],
           // the social links
           socialLinks: [
