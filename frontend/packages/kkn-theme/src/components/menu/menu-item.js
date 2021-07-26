@@ -27,7 +27,6 @@ const MenuItem = ({ index, children, mb, link, ...rest }) => (
       link={link}
     >
       <Box
-        paddingLeft={10}
         letterSpacing="-0.004em"
         lineHeight="1.39"
         fontWeight="medium"

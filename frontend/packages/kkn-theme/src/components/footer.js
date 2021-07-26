@@ -27,7 +27,6 @@ const FooterSection = (props) => (
 const FooterSectionGroup = (props) => (
   <Grid
     templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(5, 1fr)" }}
-    templateRows={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
     maxWidth="1150px"
     mx="auto"
     width="90%"
@@ -73,13 +72,18 @@ const Footer = ({ state }) => (
           </Fragment>
         ))}
       </FooterSectionItem>
+    </FooterSectionGroup>
+    <FooterSectionGroup templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(8, 1fr)" }}>
       <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
         <img style={{ maxHeight: "120px" }} src={LogoUGM}></img>
       </FooterSectionItem>
       <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
         <img style={{ maxHeight: "120px" }} src={LogoUnit}></img>
       </FooterSectionItem>
-      <FooterSectionItem>
+      <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
+        <img style={{ maxHeight: "120px" }} src={LogoUnit}></img>
+      </FooterSectionItem>
+      <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
         <img style={{ maxHeight: "100px" }} src={LogoKKN}></img>
       </FooterSectionItem>
     </FooterSectionGroup>
