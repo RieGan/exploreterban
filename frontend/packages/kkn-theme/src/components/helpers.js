@@ -57,7 +57,16 @@ export function getProductData(state) {
   return { ...post, isReady: data.isReady, isPage: data.isPage };
 }
 
+function getParsedExcerpt(e) {
+  e = e.replace(/<a.*a>/, "");
+  let s = e.split(/<\/?[a-z]+>/g);
+  s = s.join(" ");
+  s = s.replace("&hellip;", "").replace("\n", "");
+  return s;
+}
+
 export function formatPostData(state, post) {
+  console.log(getParsedExcerpt(post.excerpt.rendered));
   return {
     id: post.id,
     author: getPostAuthor(state, post),
@@ -68,7 +77,7 @@ export function formatPostData(state, post) {
     link: post.link,
     featured_media: getMediaAttributes(state, post.featured_media),
     content: post.content.rendered,
-    excerpt: post.excerpt.rendered,
+    excerpt: getParsedExcerpt(post.excerpt.rendered),
   };
 }
 
@@ -188,7 +197,6 @@ export function debounce(fn) {
   ];
 }
 
-
-export function currencyFormat(num){
-  return 'Rp. ' + num.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+export function currencyFormat(num) {
+  return "Rp. " + num.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 }
