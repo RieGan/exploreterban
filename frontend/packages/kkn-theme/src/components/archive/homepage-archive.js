@@ -1,55 +1,61 @@
-import {Box, Flex, Heading, SimpleGrid, Center} from "@chakra-ui/react";
-import {connect, styled} from "frontity";
+import {
+  Box,
+  Flex,
+  Heading,
+  SimpleGrid,
+  Center,
+  Button,
+} from "@chakra-ui/react";
+import { connect, styled } from "frontity";
 import React from "react";
 // import { FeaturedPostSection } from "../featured-post/featured-post";
-import {getFeaturedProduct, splitPosts} from "../helpers";
-import {Newsletter} from "../newsletter";
+import { getFeaturedProduct, splitPosts } from "../helpers";
+import { Newsletter } from "../newsletter";
 import ArchiveItem from "./archive-item";
 import ProductItem from "./product-item";
-import {PaginationButton} from "./pagination";
+import { PaginationButton } from "./pagination";
 import StyleControl from "../constant/style-control";
 import Language from "../constant/language";
 import WelcomingBackground from "../../assets/welcoming-bg.png";
-import AboutBackground from "../../assets/about-bg.png"
-import Link from "../link"
-import {BsArrowRight} from "react-icons/bs"
-
+import AboutBackground from "../../assets/about-bg.png";
+import Link from "../link";
+import { BsArrowRight } from "react-icons/bs";
 
 const WelcomingStyle = {
-    background: `linear-gradient(90deg, ${StyleControl.mainColor} 1.02%, rgba(156, 156, 66, 0.2) 101.02%),url(${WelcomingBackground})`,
-    backgroundSize: "cover"
-}
+  background: `linear-gradient(90deg, ${StyleControl.mainColor} 1.02%, rgba(156, 156, 66, 0.2) 101.02%),url(${WelcomingBackground})`,
+  backgroundSize: "cover",
+};
 const AboutStyle = {
-    background: `linear-gradient(90deg, #EEFFFC 0%, rgba(255, 255, 255, 0.2) 100%),url(${AboutBackground})`,
-    backgroundSize: "cover"
-}
+  background: `linear-gradient(90deg, #EEFFFC 0%, rgba(255, 255, 255, 0.2) 100%),url(${AboutBackground})`,
+  backgroundSize: "cover",
+};
 const WelcomingTitle = styled.p`
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
   line-height: 72px;
-  color: #FFFFFF;
-`
+  color: #ffffff;
+`;
 const AboutTitle = styled.p`
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 36px;
-line-height: 54px;
-text-transform: uppercase;
-color: #262626;
-`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 54px;
+  text-transform: uppercase;
+  color: #262626;
+`;
 
 const AboutCaption = styled.p`
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 26px;
-color: #262626;
-max-width: 600px;
-`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: #262626;
+  max-width: 600px;
+`;
 
 const WelcomingCaption = styled.p`
   font-family: Poppins;
@@ -57,151 +63,148 @@ const WelcomingCaption = styled.p`
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-  color: #FFFFFF;
-`
+  color: #ffffff;
+`;
 
 const Title = styled.p`
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 36px;
-line-height: 54px;
-text-transform: uppercase;
-color: #262626;
-display: inline;
-`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 54px;
+  text-transform: uppercase;
+  color: #262626;
+  display: inline;
+`;
 
 const BoxButtonClickAll = styled.div`
-width: 267px;
-height: 48px;
-background: ${StyleControl.mainColor};
-border-radius: 10px;
-`
+  width: 267px;
+  height: 48px;
+  background: ${StyleControl.mainColor};
+  border-radius: 10px;
+`;
 
 const BoxLocationAbout = styled.div`
-width: 180px;
-height: 48px;
-background: ${StyleControl.mainColor};
-border-radius: 10px;
-`
+  width: 180px;
+  height: 48px;
+  background: ${StyleControl.mainColor};
+  border-radius: 10px;
+`;
 
 const TextButtonClickAll = styled.p`
-font-family: Poppins;
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 27px;
-color: #FFFFFF;
-`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #ffffff;
+`;
 
-const ButtonAll = ({link, text}) => (
-    <Link link={link}>
-        <BoxButtonClickAll>
-            <Center h="48px">
-                <TextButtonClickAll>{text}</TextButtonClickAll><BsArrowRight size="20px" color="#FFFFFF"/>
-            </Center>
-        </BoxButtonClickAll>
-    </Link>
-)
+const ButtonAll = ({ children, link, ...props }) => (
+  <Link link={link}>
+    <Button
+      borderRadius={10}
+      size="lg"
+      bgColor={StyleControl.mainColor}
+      {...props}
+    >
+      {children}
+    </Button>
+  </Link>
+);
 
-const HomepageArchive = ({state, libraries}) => {
-    // Get the data of the current list.
-    const data = state.source.get(state.router.link);
-    const [firstThreePosts, othersPosts] = splitPosts(state, data.items);
+const HomepageArchive = ({ state, libraries }) => {
+  // Get the data of the current list.
+  const data = state.source.get(state.router.link);
+  const [firstThreePosts, othersPosts] = splitPosts(state, data.items);
 
-    // If in home ("/")
-    var productData, product;
-    if (state.router.link == "/") {
-        productData = state.source.get(`/product`);
-        product = getFeaturedProduct(state, productData.items, 4);
-    }
+  // If in home ("/")
+  var productData, product;
+  if (state.router.link == "/") {
+    productData = state.source.get(`/product`);
+    product = getFeaturedProduct(state, productData.items, 4);
+  }
 
-
-    return (
-        <Box bg={StyleControl.pageColor} as="section">
-            <Flex style={WelcomingStyle} height={{base: "400px", lg: "600px"}} align="center" justifyContent="center">
-                <Box w="80vw">
-                    <WelcomingTitle>
-                        {Language.indonesian.welcomeTitle}
-                    </WelcomingTitle>
-                    <WelcomingCaption>
-                        {Language.indonesian.welcomeCaption}
-                    </WelcomingCaption>
-                </Box>
-            </Flex>
-            {/* If in home ("/") */}
-            {state.router.link == "/" && (
-                <Box
-                    py={{base: "64px", md: "80px"}}
-                    px={{base: "24px", md: "40px"}}
-                    width={{base: "auto", lg: "80%"}}
-                    maxWidth="1200px"
-                    mx="auto"
-                >
-                    <Title>
-                        Produk{" "}
-                    </Title>
-                    <Title style={{color:StyleControl.mainColor}}>
-                        UMKM
-                    </Title>
-                    <SimpleGrid
-                        mt={{base: "64px", md: "80px"}}
-                        columns={{ base: 1, md: 2, lg: 3, xl: 4 }}
-                        spacing="40px"
-                    >
-                        {product.map(({type, id}) => {
-                            const item = state.source[type][id];
-                            return <ProductItem key={item.id} item={item}/>;
-                        })}
-                    </SimpleGrid>
-                    <br/>
-                    <Center>
-                        <ButtonAll link="/product" text="Lihat Semua Produk"/>
-                    </Center>
-                    {/*<PaginationButton mt="40px" link="/product">*/}
-                    {/*    More product*/}
-                    {/*</PaginationButton>*/}
-                </Box>
-            )}
-            <Flex style={AboutStyle} height={{base: "400px", lg: "600px"}} align="center" justifyContent="center">
-                <Box w="80vw">
-                    <AboutTitle>
-                        {state.theme.logo}
-                    </AboutTitle>
-                    <br/>
-                    <AboutCaption>
-                        {Language.indonesian.welcomeAbout}
-                    </AboutCaption>
-                    <br/>
-                    <Link link="/maps">
-                        <BoxButtonClickAll>
-                            <Center h="48px">
-                                <TextButtonClickAll>
-                                    Lokasi
-                                </TextButtonClickAll>
-                            </Center>
-                        </BoxButtonClickAll>
-                    </Link>
-                </Box>
-            </Flex>
-            <Box
-                py={{base: "64px", md: "80px"}}
-                px={{base: "24px", md: "40px"}}
-                width={{base: "auto", lg: "80%"}}
-                maxWidth="1200px"
-                mx="auto"
-            >
-                <Title>
-                    Artikel
-                </Title>
-                <Heading
-                    textTransform="uppercase"
-                    textAlign="center"
-                    fontSize={{base: "4xl", md: "6xl"}}
-                    color="accent.400"
-                >
-                    Latest Posts
-                </Heading>
+  return (
+    <Box bg={StyleControl.pageColor} as="section">
+      <Flex
+        style={WelcomingStyle}
+        height={{ base: "400px", lg: "600px" }}
+        align="center"
+        justifyContent="center"
+      >
+        <Box w="80vw">
+          <WelcomingTitle>{Language.indonesian.welcomeTitle}</WelcomingTitle>
+          <WelcomingCaption>
+            {Language.indonesian.welcomeCaption}
+          </WelcomingCaption>
+        </Box>
+      </Flex>
+      {/* If in home ("/") */}
+      {state.router.link == "/" && (
+        <Box
+          py={{ base: "64px", md: "80px" }}
+          px={{ base: "24px", md: "40px" }}
+          width={{ base: "auto", lg: "80%" }}
+          maxWidth="1200px"
+          mx="auto"
+        >
+          <Title>Produk </Title>
+          <Title style={{ color: StyleControl.mainColor }}>UMKM</Title>
+          <SimpleGrid
+            mt={{ base: "64px", md: "80px" }}
+            columns={{ base: 1, md: 2, lg: 3, xl: 4 }}
+            spacing="40px"
+          >
+            {product.map(({ type, id }) => {
+              const item = state.source[type][id];
+              return <ProductItem key={item.id} item={item} />;
+            })}
+          </SimpleGrid>
+          <br />
+          <Center>
+            <ButtonAll link="/product">
+              <TextButtonClickAll>Lihat Semua Produk</TextButtonClickAll>
+              <BsArrowRight size="20px" color="#FFFFFF" />
+            </ButtonAll>
+          </Center>
+          {/*<PaginationButton mt="40px" link="/product">*/}
+          {/*    More product*/}
+          {/*</PaginationButton>*/}
+        </Box>
+      )}
+      <Flex
+        style={AboutStyle}
+        height={{ base: "400px", lg: "600px" }}
+        align="center"
+        justifyContent="center"
+      >
+        <Box w="80vw">
+          <AboutTitle>{state.theme.logo}</AboutTitle>
+          <br />
+          <AboutCaption>{Language.indonesian.welcomeAbout}</AboutCaption>
+          <br />
+          <ButtonAll link="/maps" w={267}>
+            <TextButtonClickAll>Lokasi</TextButtonClickAll>
+          </ButtonAll>
+        </Box>
+      </Flex>
+      <Box
+        py={{ base: "64px", md: "80px" }}
+        px={{ base: "24px", md: "40px" }}
+        width={{ base: "auto", lg: "80%" }}
+        maxWidth="1200px"
+        mx="auto"
+      >
+        <Title>Artikel</Title>
+        <Heading
+          textTransform="uppercase"
+          textAlign="center"
+          fontSize={{ base: "4xl", md: "6xl" }}
+          color="accent.400"
+        >
+          Latest Posts
+        </Heading>
 
         <SimpleGrid
           mt={{ base: "64px", md: "80px" }}
@@ -214,15 +217,15 @@ const HomepageArchive = ({state, libraries}) => {
           })}
         </SimpleGrid>
 
-                <PaginationButton mt="40px" link="/page/2">
-                    More posts
-                </PaginationButton>
-            </Box>
-            {libraries.newsletter && (
-                <Newsletter showPattern={state.theme.showBackgroundPattern}/>
-            )}
-        </Box>
-    );
+        <PaginationButton mt="40px" link="/page/2">
+          More posts
+        </PaginationButton>
+      </Box>
+      {libraries.newsletter && (
+        <Newsletter showPattern={state.theme.showBackgroundPattern} />
+      )}
+    </Box>
+  );
 };
 
 export default connect(HomepageArchive);
