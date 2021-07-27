@@ -189,14 +189,14 @@ const HomepageArchive = ({ state, libraries }) => {
           columns={{ base: 1, md: 2, lg: 3 }}
           spacing="40px"
         >
-          {[...firstThreePosts, ...othersPosts].map(({ type, id }) => {
+          {firstThreePosts.map(({ type, id }) => {
             const item = state.source[type][id];
             return <ArchiveItem key={item.id} item={item} />;
           })}
         </SimpleGrid>
         <br />
         <Center>
-          <ButtonAll link="/page/2">
+          <ButtonAll link="/?is_article=1">
             <TextButtonClickAll>Lihat Semua Artikel</TextButtonClickAll>
             <BsArrowRight size="20px" color="#FFFFFF" />
           </ButtonAll>
