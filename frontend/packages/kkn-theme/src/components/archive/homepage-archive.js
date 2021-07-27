@@ -217,8 +217,8 @@ const HomepageArchive = ({ state, libraries }) => {
           })}
         </SimpleGrid>
 
-        <PaginationButton mt="40px" link="/page/2">
-          More posts
+        <PaginationButton mt="40px" link="/category/blog">
+          Lihat semua artikel
         </PaginationButton>
       </Box>
       {libraries.newsletter && (
