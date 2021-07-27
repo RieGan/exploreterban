@@ -10,6 +10,7 @@ import MapGL, {
   FlyToInterpolator,
 } from "react-map-gl";
 import { connect } from "frontity";
+import { Box } from "@chakra-ui/react";
 import UMKMPoint from "../../../../../datasets/umkm-point.json";
 import WisataPoint from "../../../../../datasets/wisata-point.json";
 import Boundary from "../../../../../datasets/boundary.json";
@@ -105,11 +106,11 @@ const Maps = ({ state }) => {
   }, []);
 
   return (
-    <>
+    <Box h="calc(100vh - 70px)">
       <MapGL
         {...viewport}
-        width="98vw"
-        height="98vh"
+        width="fit"
+        height="100%"
         mapStyle={state.mapbox.style}
         onViewportChange={setViewport}
         mapboxApiAccessToken={state.mapbox.mapboxAccessToken}
@@ -176,7 +177,7 @@ const Maps = ({ state }) => {
         layerVisibility={layerVisibility}
         setLayerVisibility={setLayerVisibility}
       />
-    </>
+    </Box>
   );
 };
 
