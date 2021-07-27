@@ -196,7 +196,7 @@ const HomepageArchive = ({ state, libraries }) => {
         </SimpleGrid>
         <br />
         <Center>
-          <ButtonAll link="/?is_article=1">
+          <ButtonAll link="/?p=">
             <TextButtonClickAll>Lihat Semua Artikel</TextButtonClickAll>
             <BsArrowRight size="20px" color="#FFFFFF" />
           </ButtonAll>
