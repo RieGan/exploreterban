@@ -65,12 +65,20 @@ function getParsedExcerpt(e) {
   return s;
 }
 
+function parseDate(e) {
+  let dt = new Date(e);
+  let ye = new Intl.DateTimeFormat("id", { year: "numeric" }).format(dt);
+  let mo = new Intl.DateTimeFormat("id", { month: "short" }).format(dt);
+  let da = new Intl.DateTimeFormat("id", { day: "2-digit" }).format(dt);
+  return `${da} ${mo} ${ye}`;
+}
+
 export function formatPostData(state, post) {
-  console.log(getParsedExcerpt(post.excerpt.rendered));
   return {
     id: post.id,
     author: getPostAuthor(state, post),
     publishDate: post.date,
+    dateParsed: parseDate(post.date),
     title: post.title.rendered,
     categories: getPostCategories(state, post),
     tags: getPostTags(state, post),
