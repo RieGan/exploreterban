@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
 import Link from "../link";
 import { decode } from "frontity";
@@ -14,6 +14,7 @@ export const PostTag = (props) => (
         fontFamily="Poppins"
         textTransform="capitalize"
         fontWeight="medium"
+        fontSize="14px"
         display="inline-block"
         _hover={{
             bg: StyleControl.mainColor,
@@ -28,16 +29,16 @@ export const PostTags = ({ tags, limit = 69, color = "white", ...props }) => {
         tags.length > limit ? tags.filter((_, idx) => idx < limit) : tags;
 
     return (
-        <Flex flexWrap="wrap" mt="12px" {...props}>
+        <>
             {limitTags.map((tag) => (
-                <PostTag color={color} key={tag.id} mr="6px" mb="6px">
+                <PostTag color={color} key={tag.id} mr="6px" mb="3px" mt="3px">
                     <Link
                         link={tag.link}
                         dangerouslySetInnerHTML={{ __html: decode(tag.name) }}
                     />
                 </PostTag>
             ))}
-        </Flex>
+        </>
     );
 };
 
