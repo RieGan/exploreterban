@@ -10,10 +10,8 @@ import { connect, styled } from "frontity";
 import React from "react";
 // import { FeaturedPostSection } from "../featured-post/featured-post";
 import { getFeaturedProduct, splitPosts } from "../helpers";
-import { Newsletter } from "../newsletter";
 import ArchiveItem from "./archive-item";
 import ProductItem from "./product-item";
-import { PaginationButton } from "./pagination";
 import StyleControl from "../constant/style-control";
 import Language from "../constant/language";
 import WelcomingBackground from "../../assets/welcoming-bg.png";
@@ -75,20 +73,6 @@ const Title = styled.p`
   text-transform: uppercase;
   color: #262626;
   display: inline;
-`;
-
-const BoxButtonClickAll = styled.div`
-  width: 267px;
-  height: 48px;
-  background: ${StyleControl.mainColor};
-  border-radius: 10px;
-`;
-
-const BoxLocationAbout = styled.div`
-  width: 180px;
-  height: 48px;
-  background: ${StyleControl.mainColor};
-  border-radius: 10px;
 `;
 
 const TextButtonClickAll = styled.p`
@@ -197,21 +181,13 @@ const HomepageArchive = ({ state, libraries }) => {
         mx="auto"
       >
         <Title>Artikel</Title>
-        <Heading
-          textTransform="uppercase"
-          textAlign="center"
-          fontSize={{ base: "4xl", md: "6xl" }}
-          color="accent.400"
-        >
-          Latest Posts
-        </Heading>
 
         <SimpleGrid
           mt={{ base: "64px", md: "80px" }}
           columns={{ base: 1, md: 2, lg: 3 }}
           spacing="40px"
         >
-          {othersPosts.map(({ type, id }) => {
+          {firstThreePosts.map(({ type, id }) => {
             const item = state.source[type][id];
             return <ArchiveItem key={item.id} item={item} />;
           })}
