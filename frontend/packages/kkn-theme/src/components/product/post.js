@@ -21,6 +21,7 @@ import { getProductData, formatProductData } from "../helpers";
 import Link from "../link";
 import StyleControl from "../constant/style-control";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { currencyFormat } from "../helpers";
 
 const tableDataStyle = {
   verticalAlign: "top",
@@ -91,7 +92,9 @@ const Post = ({ state, actions }) => {
                   <GridItem colSpan={2}>{post.product_description}</GridItem>
                   <Spacer />
                   <GridItem style={tableDataStyle}>Harga</GridItem>
-                  <GridItem colSpan={2}>{post.product_price}</GridItem>
+                  <GridItem colSpan={2}>
+                    {currencyFormat(post.product_price)}
+                  </GridItem>
                   <Spacer />
                   <GridItem style={tableDataStyle}>Lokasi</GridItem>
                   <GridItem colSpan={2}>{post.location}</GridItem>
