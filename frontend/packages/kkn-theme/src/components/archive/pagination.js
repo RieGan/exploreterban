@@ -48,8 +48,8 @@ export const PrevLink = ({
 }) => (
   <Box width="100%" {...props}>
     <ButtonAll link={link} isDisabled={isDisabled} w="100%">
-      <IoIosArrowRoundBack size="20px" color="#FFFFFF" />
       <TextButtonClickAll>Lebih lama</TextButtonClickAll>
+      <IoIosArrowRoundForward size="20px" color="#FFFFFF" />
     </ButtonAll>
   </Box>
 );
@@ -62,8 +62,8 @@ export const NextLink = ({
 }) => (
   <Box width="100%" {...props}>
     <ButtonAll link={link} isDisabled={isDisabled} w="100%">
+      <IoIosArrowRoundBack size="20px" color="#FFFFFF" />
       <TextButtonClickAll>Lebih baru</TextButtonClickAll>
-      <IoIosArrowRoundForward size="20px" color="#FFFFFF" />
     </ButtonAll>
   </Box>
 );
@@ -107,8 +107,8 @@ const Pagination = ({ state, actions, libraries, ...props }) => {
 
   return (
     <Stack direction="row" spacing="40px" {...props}>
-      <PrevLink link={nextPageLink} isDisabled={!isTherePreviousPage} />
       <NextLink link={prevPageLink} isDisabled={!isThereNextPage} />
+      <PrevLink link={nextPageLink} isDisabled={!isTherePreviousPage} />
     </Stack>
   );
 };
