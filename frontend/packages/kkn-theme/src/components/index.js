@@ -23,8 +23,6 @@ import mapboxCustomCss from "../styles/mapbox-custom-style.css";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-
-
   const overrides = extendTheme({
     fonts: {
       heading: "Kelson, system-ui, Helvetica, sans-serif",
@@ -42,28 +40,27 @@ const Theme = ({ state }) => {
         <html lang="en" />
       </Head>
 
+      <Header />
 
-            <Header />
-
-            {/* Add the main section. It renders a different component depending
+      {/* Add the main section. It renders a different component depending
       on the type of URL we are in. */}
-            <Box
-                as="main"
-                mt={{ base: "40px", md: "70px" }}
-                minH="calc(100vh - 320px)"
-            >
-                <Switch>
-                    <Product when={data.isProduct} />
-                    <Loading when={data.isFetching} />
-                    <SearchResults when={data.isSearch} />
-                    <Archive when={data.isArchive} />
-                    <Post when={data.isPostType} />
-                    <Page404 when={data.is404} />
-                    <Maps when={data.isMapPage} />
-                </Switch>
-            </Box>
+      <Box
+        as="main"
+        mt={{ base: "40px", md: "70px" }}
+        minH="calc(100vh - 320px)"
+      >
+        <Switch>
+          <Product when={data.isProduct} />
+          <Loading when={data.isFetching} />
+          <SearchResults when={data.isSearch} />
+          <Archive when={data.isArchive} />
+          <Post when={data.isPostType} />
+          <Page404 when={data.is404} />
+          <Maps when={data.isMapPage} />
+        </Switch>
+      </Box>
 
-            <Footer />
+      <Footer />
 
       {/* Add the header of the site. */}
 

@@ -12,7 +12,7 @@ const Archive = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
 
-  if (data.isHome) return <HomepageArchive />;
+  if (state.router.link == "/") return <HomepageArchive />;
 
   return (
     <Box bg="accent.50" as="section">
@@ -40,6 +40,14 @@ const Archive = ({ state }) => {
           showPattern={state.theme.showBackgroundPattern}
           taxonomy="Posts By"
           title={decode(state.source.author[data.id].name)}
+        />
+      )}
+
+      {/* If all article */}
+      {data.isHome && (
+        <ArchiveHeader
+          showPattern={state.theme.showBackgroundPattern}
+          title={"Semua Artikel"}
         />
       )}
 
