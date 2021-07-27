@@ -4,6 +4,7 @@ import React from "react";
 import Archive from "../archive";
 import { PatternBox, PatternBoxInner } from "../newsletter";
 import useSearch from "../hooks/useSearch";
+import StyleControl from "../constant/style-control";
 
 const SearchHeader = ({ label, title, ...props }) => (
   <Box {...props}>
@@ -11,20 +12,12 @@ const SearchHeader = ({ label, title, ...props }) => (
       size="md"
       as="h6"
       fontWeight="medium"
-      textTransform="uppercase"
-      color="accent.400"
+      color="rgba(255, 255, 255, 0.6)"
     >
       {label}
     </Heading>
 
-    <Heading
-      mt={4}
-      fontWeight="medium"
-      as="h1"
-      textTransform="uppercase"
-      fontSize="3.5rem"
-      color="white"
-    >
+    <Heading mt={4} fontWeight="medium" as="h1" fontSize="3.5rem" color="white">
       {title}
     </Heading>
   </Box>
@@ -41,7 +34,7 @@ const NoResultTitle = ({ query }) => (
   <SearchHeader label={`0 result for`} title={`‘${query}’`} />
 );
 
-const NoResultContent = props => (
+const NoResultContent = (props) => (
   <Box
     p="80px"
     maxW="1400px"
@@ -54,7 +47,7 @@ const NoResultContent = props => (
   />
 );
 
-const SearchForm = connect(props => {
+const SearchForm = connect((props) => {
   const { form, input } = useSearch(props);
   return (
     <Stack mt="40px" as="form" direction="row" align="stretch" {...form}>
@@ -79,7 +72,7 @@ export const SearchResults = ({ state }) => {
   const isEmpty = data.total === 0;
 
   return (
-    <Box bg="primary.100">
+    <Box bg={StyleControl.pageColor}>
       <PatternBox
         showPattern={state.theme.showBackgroundPattern}
         pb="60px"
