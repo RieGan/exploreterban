@@ -58,7 +58,7 @@ export function getProductData(state) {
 }
 
 function getParsedExcerpt(e) {
-  e = e.replace(/<a.*a>/, "");
+  e = e.replace(/<a.*a>/g, "");
   let s = e.split(/<\/?[a-z]+>/g);
   s = s.join(" ");
   s = s.replace("&hellip;", "").replace("\n", "");
