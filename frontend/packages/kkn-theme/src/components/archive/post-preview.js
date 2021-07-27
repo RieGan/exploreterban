@@ -5,6 +5,7 @@ import PostTags from "../post/post-tags";
 import { styled } from "frontity";
 import { BsDot } from "react-icons/bs"
 import StyleControl from "../constant/style-control"
+import DefaultImage from "../../assets/default-post.png"
 
 const Title = styled.p`
 font-family: Poppins;
@@ -59,7 +60,7 @@ const PostPreview = ({ data, ...rest }) => {
         {/*    </Link>*/}
         {/*)}*/}
           <Link link={link}>
-              <Image objectFit="cover" src={featured_media.src} borderRadius="10px 10px 0 0" shadow="md"/>
+              <Image objectFit="cover" src={featured_media.src || DefaultImage} borderRadius="10px 10px 0 0" shadow="md" h="240px" w="100%"/>
           </Link>
         <Flex p="40px" flexGrow="1" direction="column">
           <Link link={link}>
@@ -76,22 +77,6 @@ const PostPreview = ({ data, ...rest }) => {
                     <PostTags color="black" justify="flex-start" tags={tags} />
                 </Flex>
             </Collapse>
-          {/*<Heading fontSize="2xl" as="h4" textTransform="uppercase">*/}
-          {/*  <Link link={link}>{title}</Link>*/}
-          {/*</Heading>*/}
-          {/*<Box*/}
-          {/*    my="20px"*/}
-          {/*    flex="1"*/}
-          {/*    color="gray.700"*/}
-          {/*    fontFamily="Poppins"*/}
-          {/*    fontStyle="normal"*/}
-          {/*    fontWeight="normal"*/}
-          {/*    fontSize="16px"*/}
-          {/*    lineHeight="26px"*/}
-          {/*    overflow="hidden"*/}
-          {/*    textOverflow="ellipsis"*/}
-          {/*    dangerouslySetInnerHTML={{ __html: excerpt }}*/}
-          {/*/>*/}
             <Description>
                 {excerpt}
             </Description>
