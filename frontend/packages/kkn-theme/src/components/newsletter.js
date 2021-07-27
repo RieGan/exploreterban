@@ -2,23 +2,24 @@ import React from "react";
 import { Box, Heading, Text, Flex } from "@chakra-ui/react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import tile from "../assets/pattern-tile-green.svg";
+import StyleControl from "./constant/style-control";
 
 export const PatternBox = ({ showPattern = true, ...props }) => (
   <Box
     as="section"
-    bg="primary.700"
+    bg={StyleControl.mainColor}
     borderTop="10px solid"
     borderColor="accent.400"
     {...(showPattern && {
       bgImage: `url(${tile})`,
       bgSize: "1018px",
-      bgPos: "top center"
+      bgPos: "top center",
     })}
     {...props}
   />
 );
 
-export const PatternBoxInner = props => (
+export const PatternBoxInner = (props) => (
   <Box
     py="80px"
     position="relative"
@@ -33,7 +34,7 @@ export const PatternBoxInner = props => (
 );
 
 // TODO: Add the logic to show this component based on if newsletter package exists
-export const Newsletter = props => (
+export const Newsletter = (props) => (
   <PatternBox {...props}>
     <Box
       py="80px"
@@ -57,7 +58,7 @@ export const Newsletter = props => (
   </PatternBox>
 );
 
-const SubscribeInput = props => (
+const SubscribeInput = (props) => (
   <Box
     as="input"
     width="100%"
@@ -73,7 +74,7 @@ const SubscribeInput = props => (
   />
 );
 
-const SubscribeButton = props => (
+const SubscribeButton = (props) => (
   <Box
     as="button"
     transition="background-color ease .25s"
@@ -90,11 +91,11 @@ const SubscribeButton = props => (
     justifyContent="center"
     _hover={{
       bg: "accent.400",
-      color: "white"
+      color: "white",
     }}
     _focus={{
       bg: "accent.400",
-      color: "white"
+      color: "white",
     }}
     {...props}
   >
@@ -107,7 +108,7 @@ const SubscribeButton = props => (
   </Box>
 );
 
-const SubscribeForm = props => (
+const SubscribeForm = (props) => (
   <Flex as="form" mt="40px" {...props}>
     <SubscribeInput />
     <SubscribeButton />

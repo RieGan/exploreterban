@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Stack, Button } from "@chakra-ui/react";
+import StyleControl from "../constant/style-control";
 
 export const PaginationButton = styled(Link)`
   width: 100%;
@@ -30,19 +31,28 @@ export const PaginationButton = styled(Link)`
   }
 `;
 
+const TextButtonClickAll = styled.p`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #ffffff;
+`;
+
 export const PrevLink = ({
   isDisabled,
   label = "See older posts",
   link,
   ...props
 }) => (
-    <Box width="100%" {...props}>
-      <PaginationButton link={link} aria-label={label} aria-disabled={isDisabled}>
-        <Box width="40px" height="auto" as={IoIosArrowRoundBack} />
-        <span>Older posts</span>
-      </PaginationButton>
-    </Box>
-  );
+  <Box width="100%" {...props}>
+    <ButtonAll link={link} isDisabled={isDisabled} w="100%">
+      <IoIosArrowRoundBack size="20px" color="#FFFFFF" />
+      <TextButtonClickAll>Lebih lama</TextButtonClickAll>
+    </ButtonAll>
+  </Box>
+);
 
 export const NextLink = ({
   isDisabled,
@@ -50,13 +60,26 @@ export const NextLink = ({
   link,
   ...props
 }) => (
-    <Box width="100%" {...props}>
-      <PaginationButton link={link} aria-label={label} aria-disabled={isDisabled}>
-        <span>Newer posts</span>
-        <Box width="40px" height="auto" as={IoIosArrowRoundForward} />
-      </PaginationButton>
-    </Box>
-  );
+  <Box width="100%" {...props}>
+    <ButtonAll link={link} isDisabled={isDisabled} w="100%">
+      <TextButtonClickAll>Lebih baru</TextButtonClickAll>
+      <IoIosArrowRoundForward size="20px" color="#FFFFFF" />
+    </ButtonAll>
+  </Box>
+);
+
+const ButtonAll = ({ children, link, ...props }) => (
+  <Link link={link}>
+    <Button
+      borderRadius={10}
+      size="lg"
+      bgColor={StyleControl.mainColor}
+      {...props}
+    >
+      {children}
+    </Button>
+  </Link>
+);
 
 const Pagination = ({ state, actions, libraries, ...props }) => {
   const { totalPages } = state.source.get(state.router.link);
@@ -68,13 +91,13 @@ const Pagination = ({ state, actions, libraries, ...props }) => {
   const nextPageLink = libraries.source.stringify({
     path,
     page: page + 1,
-    query
+    query,
   });
 
   const prevPageLink = libraries.source.stringify({
     path,
     page: page - 1,
-    query
+    query,
   });
 
   // Fetch the next page if it hasn't been fetched yet.
