@@ -38,7 +38,7 @@ const SearchResultTitle = ({ resultCount, query }) => (
 );
 
 const NoResultTitle = ({ query }) => (
-  <SearchHeader label={`0 result for`} title={`‘${query}’`} />
+  <SearchHeader label={`ditemukan 0 hasil pencarian`} title={`‘${query}’`} />
 );
 
 const NoResultContent = props => (
@@ -60,13 +60,13 @@ const SearchForm = connect(props => {
     <Stack mt="40px" as="form" direction="row" align="stretch" {...form}>
       <Input
         focusBorderColor="accent.400"
-        placeholder="Search..."
+        placeholder="Cari..."
         size="lg"
         rounded="0"
         {...input}
       />
       <Button type="submit" rounded="0" colorScheme="accent" size="lg">
-        Search
+        Cari
       </Button>
     </Stack>
   );
@@ -101,8 +101,7 @@ export const SearchResults = ({ state }) => {
         <NoResultContent>
           <Box maxW="600px" mx="auto">
             <Text fontSize="xl" textAlign="center">
-              We could not find any results for your search. You can give it
-              another try through the search form below.
+              Hasil pencarian tidak ditemukan. Coba kata kunci lain.
             </Text>
             <SearchForm />
           </Box>
