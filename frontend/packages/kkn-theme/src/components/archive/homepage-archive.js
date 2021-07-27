@@ -53,6 +53,8 @@ const AboutCaption = styled.p`
   line-height: 26px;
   color: #262626;
   max-width: 600px;
+  margin-top: 24px;
+  margin-bottom: 36px;
 `;
 
 const WelcomingCaption = styled.p`
