@@ -31,21 +31,21 @@ const settings = {
             ["Beranda", "/"],
             ["Desa", "/category/desa/"],
             ["Produk UMKM", "/product/"],
-            ["Peta", "/maps"],
             ["Artikel Edukasi", "/category/blog/"],
+            ["Peta", "/maps"],
           ],
           // the social links
           socialLinks: [
-            ["pinterest", "https://www.pinterest.com/frontity/"],
-            ["facebook", "https://www.instagram.com/frontity/"],
-            ["twitter", "https://www.twitter.com/frontity/"],
+            ["instagram", "https://www.instagram.com//"],
+            ["facebook", "https://www.facebook.com//"],
+            ["twitter", "https://www.twitter.com//"],
             ["whatsApp", "https://wa.me/6289612345678"],
           ],
           // footer categories
           categories: [
-            ["Wisata", "/category/wisata"],
-            ["UMKM", "/category/umkm"],
-            ["Blog", "/category/blog"],
+            ["Desa", "/category/desa"],
+            ["Produk UMKM", "/product"],
+            ["Artikel Edukasi", "/category/blog"],
             ["Peta", "/maps"],
           ],
           // color shades to use in the blog
