@@ -28,6 +28,13 @@ const tableDataStyle = {
   fontStyle: "italic",
 };
 
+const Spacer = () => (
+  <>
+    <GridItem mt={5}></GridItem>
+    <GridItem colSpan={2}></GridItem>
+  </>
+);
+
 const Post = ({ state, actions }) => {
   const postData = getProductData(state);
   const post = formatProductData(postData);
@@ -50,13 +57,7 @@ const Post = ({ state, actions }) => {
         // taxonomy={"Produk"}
         title={"Detail Produk"}
       />
-      <Section
-        boxShadow="lg"
-        bg="white"
-        pb="80px"
-        size="lg"
-        borderRadius="lg"
-      >
+      <Section boxShadow="lg" bg="white" pb="80px" size="lg" borderRadius="lg">
         <Content
           as={Section}
           px={{ base: "32px", md: "0" }}
@@ -65,53 +66,43 @@ const Post = ({ state, actions }) => {
         >
           <Grid
             templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
-            maxWidth="1150px"
             mx="auto"
-            width="90%"
+            width="100%"
             fontFamily="Poppins"
           >
-            <GridItem padding="24px" color="white" textAlign="justify">
+            <GridItem padding="10px" color="white" textAlign="justify">
               {post.featured_media != null && (
                 <FeaturedMedia featured_media={post.featured_media} />
               )}
             </GridItem>
-            <GridItem
-              colSpan={2}
-              padding="24px"
-              // color="white"
-              textAlign="justify"
-            >
-              <Table variant="unstyled" size="sm">
-                <Thead h={20}>
-                  <Tr>
-                    <Td colSpan={2} fontWeight="bold" fontSize={24}>
-                      {post.product_name}
-                    </Td>
-                  </Tr>
-                </Thead>
-                <Tbody fontSize={18}>
-                  <Tr>
-                    <Td style={tableDataStyle}>Deskripsi</Td>
-                    <Td>{post.product_description}</Td>
-                  </Tr>
-                  <Tr>
-                    <Td style={tableDataStyle}>Harga</Td>
-                    <Td>{post.product_price}</Td>
-                  </Tr>
-                  <Tr>
-                    <Td style={tableDataStyle}>Lokasi</Td>
-                    <Td>{post.location}</Td>
-                  </Tr>
-                  <Tr>
-                    <Td style={tableDataStyle}>Owner</Td>
-                    <Td>{post.owner}</Td>
-                  </Tr>
-                  <Tr>
-                    <Td style={tableDataStyle}>Nomor Telepon</Td>
-                    <Td>{post.phone_number}</Td>
-                  </Tr>
-                </Tbody>
-              </Table>
+            <GridItem colSpan={2} padding="10px" textAlign="justify">
+              <Box ml={10}>
+                <Box h={20} fontWeight="bold" fontSize={24}>
+                  {post.product_name}
+                </Box>
+                <Grid
+                  templateColumns={{
+                    base: "repeat(1, 1fr)",
+                    md: "repeat(3, 1fr)",
+                  }}
+                  fontSize={18}
+                >
+                  <GridItem style={tableDataStyle}>Deskripsi</GridItem>
+                  <GridItem colSpan={2}>{post.product_description}</GridItem>
+                  <Spacer />
+                  <GridItem style={tableDataStyle}>Harga</GridItem>
+                  <GridItem colSpan={2}>{post.product_price}</GridItem>
+                  <Spacer />
+                  <GridItem style={tableDataStyle}>Lokasi</GridItem>
+                  <GridItem colSpan={2}>{post.location}</GridItem>
+                  <Spacer />
+                  <GridItem style={tableDataStyle}>Owner</GridItem>
+                  <GridItem colSpan={2}>{post.owner}</GridItem>
+                  <Spacer />
+                  <GridItem style={tableDataStyle}>Nomor Telepon</GridItem>
+                  <GridItem colSpan={2}>{post.phone_number}</GridItem>
+                </Grid>
+              </Box>
             </GridItem>
           </Grid>
         </Content>
