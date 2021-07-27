@@ -216,14 +216,14 @@ const HomepageArchive = ({ state, libraries }) => {
             return <ArchiveItem key={item.id} item={item} />;
           })}
         </SimpleGrid>
-
-        <PaginationButton mt="40px" link="/category/blog">
-          Lihat semua artikel
-        </PaginationButton>
+        <br />
+        <Center>
+          <ButtonAll link="/category/blog">
+            <TextButtonClickAll>Lihat Semua Artikel</TextButtonClickAll>
+            <BsArrowRight size="20px" color="#FFFFFF" />
+          </ButtonAll>
+        </Center>
       </Box>
-      {libraries.newsletter && (
-        <Newsletter showPattern={state.theme.showBackgroundPattern} />
-      )}
     </Box>
   );
 };
