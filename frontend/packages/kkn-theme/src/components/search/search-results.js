@@ -58,7 +58,13 @@ const SearchForm = connect((props) => {
         rounded="0"
         {...input}
       />
-      <Button type="submit" rounded="0" colorScheme="accent" size="lg">
+      <Button
+        type="submit"
+        rounded="0"
+        bgColor={StyleControl.secondaryColor}
+        color="white"
+        size="lg"
+      >
         Cari
       </Button>
     </Stack>
