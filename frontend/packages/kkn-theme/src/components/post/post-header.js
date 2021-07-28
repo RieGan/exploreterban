@@ -4,6 +4,7 @@ import Link from "../link";
 import PostCategories from "./post-categories";
 import { formatDate } from "../helpers";
 import { decode } from "frontity";
+import StyleControl from "../constant/style-control";
 
 const PostHeader = ({
   heading,
@@ -35,7 +36,7 @@ const PostHeader = ({
     {!isPage && author && (
       <Text fontSize="lg">
         oleh{" "}
-        <Link fontWeight="bold" color="accent.400" link={author.link}>
+        <Link fontWeight="bold" color={StyleControl.secondaryColor} link={author.link}>
           {decode(author.name)}
         </Link>
       </Text>

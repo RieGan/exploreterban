@@ -1,6 +1,7 @@
 import React from "react";
 import { Alert, Text, Box, Heading } from "@chakra-ui/react";
 import Link from "../link";
+import StyleControl from "../constant/style-control";
 
 /**
  *
@@ -70,7 +71,7 @@ const PostLink = ({ children, href, rel, ...props }) => (
   <Box
     as="span"
     fontWeight="medium"
-    color="accent.400"
+    color={StyleControl.secondaryColor}
     _hover={{
       textDecoration: "underline"
     }}

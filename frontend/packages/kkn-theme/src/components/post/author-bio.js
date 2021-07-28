@@ -2,6 +2,7 @@ import { Avatar, Box, Text, Flex } from "@chakra-ui/react";
 import React from "react";
 import Link from "../link";
 import { decode } from "frontity";
+import StyleControl from "../constant/style-control";
 
 const AuthorBio = ({ image, description, name, link }) => (
   <Flex maxWidth="700px" my={4} direction={{ base: "column", md: "row" }}>
@@ -13,7 +14,7 @@ const AuthorBio = ({ image, description, name, link }) => (
         <Link
           link={link}
           fontWeight="bold"
-          color="accent.400"
+          color={StyleControl.secondaryColor}
           _hover={{ textDecoration: "underline" }}
         >
           {decode(name)}

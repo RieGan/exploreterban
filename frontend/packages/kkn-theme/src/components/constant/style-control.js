@@ -3,5 +3,5 @@ export default {
   headerColor: "#FFFFFF",
   navPassive: "#000000",
   pageColor: "#F5F5F5",
-  accent200: "#f1be58"
+  secondaryColor: "#f1be58",
 };

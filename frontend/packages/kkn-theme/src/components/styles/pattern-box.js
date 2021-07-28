@@ -13,7 +13,7 @@ export const PatternBox = ({ showPattern = true, ...props }) => (
     as="section"
     bg={StyleControl.mainColor}
     borderTop="10px solid"
-    borderColor="accent.400"
+    borderColor={StyleControl.secondaryColor}
     {...(showPattern && {
       bgImage: `url(${tileGreen})`,
       bgSize: "1018px",

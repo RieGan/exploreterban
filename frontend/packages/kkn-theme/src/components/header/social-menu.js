@@ -5,9 +5,10 @@ import {
   IoLogoTwitter,
   IoLogoPinterest,
   IoLogoFacebook,
-  IoLogoInstagram
+  IoLogoInstagram,
 } from "react-icons/io";
 import Link from "../link";
+import StyleControl from "../constant/style-control";
 
 // warning for showSocialLinks and menu.length
 export const SocialMenu = ({ menu, ...props }) => (
@@ -23,7 +24,7 @@ export const SocialMenu = ({ menu, ...props }) => (
 
 const SocialMenuItem = ({ icon, label, link, ...props }) => (
   <Box
-    color="accent.400"
+    color={StyleControl.secondaryColor}
     transition="all 0.3s"
     _hover={{ color: "white" }}
     as="li"
@@ -42,7 +43,7 @@ const icons = {
   twitter: IoLogoTwitter,
   pinterest: IoLogoPinterest,
   facebook: IoLogoFacebook,
-  instagram: IoLogoInstagram
+  instagram: IoLogoInstagram,
 };
 
 const SocialNav = ({ menu, ...props }) => (

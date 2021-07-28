@@ -11,7 +11,7 @@ import LogoUnit from "../assets/logo-unit.png";
 
 const FooterCategory = styled.b`
   font-size: 18px;
-  color: ${StyleControl.accent200};
+  color: ${StyleControl.secondaryColor};
 `
 
 const FooterSection = (props) => (

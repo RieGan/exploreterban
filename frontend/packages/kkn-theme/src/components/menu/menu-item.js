@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
 import Link from "../link";
+import StyleControl from "../constant/style-control";
 
 const MenuItem = ({ index, children, mb, link, ...rest }) => (
   <Box as="li" listStyleType="none" mb={mb} {...rest}>
@@ -14,13 +15,13 @@ const MenuItem = ({ index, children, mb, link, ...rest }) => (
       borderColor="#ffffff14"
       _hover={{
         bg: "rgba(236, 164, 25, 0.14)",
-        borderColor: "accent.400",
-        color: "accent.400"
+        borderColor: StyleControl.secondaryColor,
+        color: StyleControl.secondaryColor,
       }}
       _focus={{
         bg: "rgba(236, 164, 25, 0.14)",
-        borderColor: "accent.400",
-        color: "accent.400"
+        borderColor: StyleControl.secondaryColor,
+        color: StyleControl.secondaryColor,
       }}
       transition="all 0.3s"
       padding="12px"

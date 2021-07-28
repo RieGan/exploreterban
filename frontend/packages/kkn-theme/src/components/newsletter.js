@@ -9,7 +9,7 @@ export const PatternBox = ({ showPattern = true, ...props }) => (
     as="section"
     bg={StyleControl.mainColor}
     borderTop="10px solid"
-    borderColor="accent.400"
+    borderColor={StyleControl.secondaryColor}
     {...(showPattern && {
       bgImage: `url(${tile})`,
       bgSize: "1018px",
@@ -49,7 +49,7 @@ export const Newsletter = (props) => (
       <Heading color="white" textTransform="uppercase">
         Never miss an update!
       </Heading>
-      <Text mt={4} fontSize="xl" color="accent.400">
+      <Text mt={4} fontSize="xl" color={StyleControl.secondaryColor}>
         Receive the latest framework releases, new features, blog posts and
         tutorials.
       </Text>
@@ -82,7 +82,7 @@ const SubscribeButton = (props) => (
     fontSize={{ base: "1.625rem" }}
     cursor="pointer"
     textAlign="center"
-    color="accent.400"
+    color={StyleControl.secondaryColor}
     flexShrink="0"
     height="60px"
     minWidth="60px"
@@ -90,11 +90,11 @@ const SubscribeButton = (props) => (
     alignItems="center"
     justifyContent="center"
     _hover={{
-      bg: "accent.400",
+      bg: StyleControl.secondaryColor,
       color: "white",
     }}
     _focus={{
-      bg: "accent.400",
+      bg: StyleControl.secondaryColor,
       color: "white",
     }}
     {...props}

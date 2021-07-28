@@ -1,5 +1,6 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
+import StyleControl from "../constant/style-control";
 
 /**
  * A Box with accented top border
@@ -10,7 +11,7 @@ const BorderBox = props => (
     p="40px"
     bg="accent.50"
     borderTop="4px solid"
-    borderColor="accent.400"
+    borderColor={StyleControl.secondaryColor}
     {...props}
   />
 );

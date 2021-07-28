@@ -7,6 +7,7 @@ import ProductItem from "./product-item";
 import HomepageArchive from "./homepage-archive";
 import Pagination from "./pagination";
 import { decode } from "frontity";
+import Language from "../constant/language";
 
 const Archive = ({ state }) => {
   // Get the data of the current list.
@@ -30,7 +31,7 @@ const Archive = ({ state }) => {
         <ArchiveHeader
           showPattern={state.theme.showBackgroundPattern}
           taxonomy={"Produk UMKM oleh"}
-          title={"Desa Mulusan"}
+          title={Language.indonesian.desaName}
         />
       )}
 

@@ -52,7 +52,7 @@ const SearchForm = connect((props) => {
   return (
     <Stack mt="40px" as="form" direction="row" align="stretch" {...form}>
       <Input
-        focusBorderColor="accent.400"
+        focusBorderColor={StyleControl.secondaryColor}
         placeholder="Cari..."
         size="lg"
         rounded="0"
