@@ -166,7 +166,7 @@ const HomepageArchive = ({ state, libraries }) => {
         justifyContent="center"
       >
         <Box w="80vw">
-          <AboutTitle>{state.theme.logo}</AboutTitle>
+          <AboutTitle>{Language.indonesian.desaName}</AboutTitle>
           <br />
           <AboutCaption>{Language.indonesian.welcomeAbout}</AboutCaption>
           <br />
