@@ -1,3 +1,5 @@
+import { MAPBOX_ACCESS_TOKEN } from "./env.js";
+
 const settings = {
   name: "frontend",
   state: {
@@ -7,8 +9,7 @@ const settings = {
       description: "Website Desa Penari dari KKN UGM Yogyakarta 2021",
     },
     mapbox: {
-      mapboxAccessToken:
-        "pk.eyJ1IjoicWFxYWVuYmVyc2FtYSIsImEiOiJja3I1MGEzNWEwYnJrMnJyMm5lY29raDl4In0.KBuoAaMtcks8aXR0iclhSA",
+      mapboxAccessToken: MAPBOX_ACCESS_TOKEN,
       latitude: -7.769137,
       longitude: 110.377945,
       zoom: 15,
