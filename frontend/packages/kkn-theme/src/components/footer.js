@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Image, Grid, GridItem } from "@chakra-ui/react";
 import React, { Fragment } from "react";
 import { SocialMenu } from "./header/social-menu";
 import { connect, styled } from "frontity";
@@ -75,16 +75,16 @@ const Footer = ({ state }) => (
     </FooterSectionGroup>
     <FooterSectionGroup templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(8, 1fr)" }}>
       <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
-        <img style={{ maxHeight: "120px" }} src={LogoUGM}></img>
+        <Image src={LogoUGM} h="64px" objectFit="contain"/>
       </FooterSectionItem>
       <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
-        <img style={{ maxHeight: "120px" }} src={LogoUnit}></img>
+        <Image src={LogoUnit} h="64px" objectFit="contain"/>
       </FooterSectionItem>
       <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
-        <img style={{ maxHeight: "120px" }} src={LogoUnit}></img>
+        <Image src={LogoUnit} h="64px" objectFit="contain"/>
       </FooterSectionItem>
       <FooterSectionItem colSpan={{ base: 1, md: 2 }}>
-        <img style={{ maxHeight: "100px" }} src={LogoKKN}></img>
+          <Image src={LogoKKN} h="64px" objectFit="contain"/>
       </FooterSectionItem>
     </FooterSectionGroup>
   </FooterSection>
