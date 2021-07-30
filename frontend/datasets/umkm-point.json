@@ -3,16 +3,16 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Fakultas Mipa",
-        "address": "Sekip Utara Bulaksumur Kotak Pos 21, Senolowo, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281",
-        "phone": "(0274) 513339",
-        "product": "Batik",
-        "image_url": "https://ugm.ac.id/galleries/static_image/education/fak-mipa1.jpg"
+        "name": "Kantin Hello Kiti",
+        "address": "Terban GK V/25 RT01 / RW01, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223, Indonesia",
+        "phone": "+6289510365546",
+        "product": "Makanan",
+        "image_url": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=JHN-0jr00ZXk-YqNWNppKw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=69.73951&pitch=0&thumbfov=100"
       },
       "geometry": {
         "coordinates": [
-          110.376618,
-          -7.767378
+          110.372136,
+          -7.776090
         ],
         "type": "Point"
       },
@@ -21,16 +21,16 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Fakultas Geografi",
-        "address": "Universitas Gadjah Mada Jl. Kaliurang, Sekip Utara, Bulaksumur Sinduadi Sleman, Senolowo, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281",
-        "phone": "(0274) 6492340",
-        "product": "Tempe Gembus",
-        "image_url": "https://awsimages.detik.net.id/community/media/visual/2020/02/11/d7f76198-a38d-4816-827d-951bf5ff6832_169.jpeg?w=700&q=90"
+        "name": "Alanna Betta Farm",
+        "address": "Jl. Pasiraman No.32, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233, Indonesia",
+        "phone": "+6282123810507",
+        "product": "Ikan Hias",
+        "image_url": "https://lh5.googleusercontent.com/p/AF1QipO5xCTjf9LqiQpjblFQrjlvy1hSaN4MB5eeHcV1=w408-h306-k-no"
       },
       "geometry": {
         "coordinates": [
-          110.377582,
-          -7.766547
+          110.37064227250227,
+          -7.7753273818079895
         ],
         "type": "Point"
       },
@@ -39,16 +39,178 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Perpustakaan Pusat",
-        "address": "Bulaksumur, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281",
-        "phone": "(0274) 588688",
-        "product": "Tahu Gejrot",
-        "image_url": "http://tpb.tp.ugm.ac.id/wp-content/uploads/2015/10/perpustakaan-ugm.png"
+        "name": "Angkringan Mas Arif",
+        "address": "Terban, Gondokusuman, Yogyakarta City, Special Region of Yogyakarta 55233, Indonesia",
+        "phone": "+6287739172668",
+        "product": "Angkringan",
+        "image_url": "https://lh5.googleusercontent.com/p/AF1QipPvNWSnP2-f1etLrmP1UZhOGl7MVGaW8nvV8zau=w408-h544-k-no"
       },
       "geometry": {
         "coordinates": [
-          110.37817,
-          -7.769355
+          110.37018050159695,
+          -7.775697875584867
+        ],
+        "type": "Point"
+      },
+      "id": "f078731e9bb92941a8f78c6804045ea1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Warung Nada",
+        "address": "Jl. Terban, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223, Indonesia",
+        "phone": "-",
+        "product": "Toko Kelontong",
+        "image_url": "https://lh5.googleusercontent.com/p/AF1QipMi3TM0qrdcbwWZ6YVlBroPxrFn9U-qPT_G1F8v=w426-h240-k-no"
+      },
+      "geometry": {
+        "coordinates": [
+          110.37091726766701,
+          -7.775768247505723
+        ],
+        "type": "Point"
+      },
+      "id": "f078731e9bb92941a8f78c6804045ea1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PKT AQUATIC",
+        "address": "Terban, Gondokusuman, Yogyakarta City, Special Region of Yogyakarta 55223, Indonesia",
+        "phone": "-",
+        "product": "Ikan Hias",
+        "image_url": "https://lh5.googleusercontent.com/p/AF1QipP0pR3iXwgCwEe8zQEZjYGpALn7hJ3rdUjjAQEU=w408-h725-k-no"
+      },
+      "geometry": {
+        "coordinates": [
+          110.37116378947641,
+          -7.776168922442967
+        ],
+        "type": "Point"
+      },
+      "id": "f078731e9bb92941a8f78c6804045ea1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SHOP FOOTBALLYK | TEMPAT BUAT KAOS",
+        "address": "Jl. Pasiraman, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233, Indonesia",
+        "phone": "+6285800334828",
+        "product": "Baju",
+        "image_url": "https://lh5.googleusercontent.com/p/AF1QipMf3omX22LwqZX6_PzMWdCUuRFfdIgOIzVItJ38=w408-h544-k-no"
+      },
+      "geometry": {
+        "coordinates": [
+          110.37100017472063,
+          -7.776420060269161
+        ],
+        "type": "Point"
+      },
+      "id": "f078731e9bb92941a8f78c6804045ea1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bubur Ayam Bandung Az - Zahra",
+        "address": "Jl. DR. Sardjito No.66, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223, Indonesia",
+        "phone": "-",
+        "product": "Makanan",
+        "image_url": "https://lh5.googleusercontent.com/p/AF1QipPNA51UnLPWmuVbDRlZzhzeLodN7Pr0-dJan_Hm=w408-h272-k-no"
+      },
+      "geometry": {
+        "coordinates": [
+          110.37199323446956,
+          -7.776895766756787
+        ],
+        "type": "Point"
+      },
+      "id": "f078731e9bb92941a8f78c6804045ea1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Angkringan Sarkimpul",
+        "address": "Jl. C. Simanjuntak No.79, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223, Indonesia",
+        "phone": "-",
+        "product": "Angkringan",
+        "image_url": "https://lh5.googleusercontent.com/p/AF1QipNiBT7sx5lzCSzHuveyHtSRNt0PDKBZ8Fkz8axq=w600-h450-p-k-no"
+      },
+      "geometry": {
+        "coordinates": [
+          110.372395393842,
+          -7.776492546509809
+        ],
+        "type": "Point"
+      },
+      "id": "f078731e9bb92941a8f78c6804045ea1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Warung Makan Hollywood",
+        "address": "JL. Prof. Dr. Sarjito, No. 65, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223, Indonesia",
+        "phone": "+6287839067868",
+        "product": "Makanan",
+        "image_url": "https://lh5.googleusercontent.com/p/AF1QipMaCiw_QwVGD6UxIi6c1Mo2Ij5Xju_1dhRe_oMW=w600-h450-p-k-no"
+      },
+      "geometry": {
+        "coordinates": [
+          110.37202029539506,
+          -7.776757961227377
+        ],
+        "type": "Point"
+      },
+      "id": "f078731e9bb92941a8f78c6804045ea1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sate Kambing&Ayam Cak Syafii MADURA",
+        "address": "Jl. DR. Sardjito No.75, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223, Indonesia",
+        "phone": "-",
+        "product": "Sate Kambing",
+        "image_url": "https://lh5.googleusercontent.com/p/AF1QipM3UbPYwE2-1gk5JxA_LbMtr1FpGV_rtRpwc54B=w408-h544-k-no"
+      },
+      "geometry": {
+        "coordinates": [
+          110.37113894167155,
+          -7.778454932726024
+        ],
+        "type": "Point"
+      },
+      "id": "f078731e9bb92941a8f78c6804045ea1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Angkringan Rambat",
+        "address": "Jl. DR. Sardjito No.22, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223, Indonesia",
+        "phone": "-",
+        "product": "Angkringan",
+        "image_url": "https://lh5.googleusercontent.com/p/AF1QipP7H9eA8yPScqIezGfQ2weD3ET-OPRbByLkF_7l=w408-h725-k-no"
+      },
+      "geometry": {
+        "coordinates": [
+          110.37100134967,
+          -7.778635012376183
+        ],
+        "type": "Point"
+      },
+      "id": "f078731e9bb92941a8f78c6804045ea1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PENYETAN 88 budhe Prie",
+        "address": "Terban, Gondokusuman, Yogyakarta City, Special Region of Yogyakarta 55233, Indonesia",
+        "phone": "-",
+        "product": "Penyetan",
+        "image_url": "https://lh5.googleusercontent.com/p/AF1QipMGNZcNudndt2avqSQCx-JlijOZJKMabx5i3xF-=w408-h725-k-no"
+      },
+      "geometry": {
+        "coordinates": [
+          110.3704533282145,
+          -7.780176423501461
         ],
         "type": "Point"
       },

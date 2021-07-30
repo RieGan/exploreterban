@@ -10,8 +10,8 @@ const settings = {
     },
     mapbox: {
       mapboxAccessToken: MAPBOX_ACCESS_TOKEN,
-      latitude: -7.769137,
-      longitude: 110.377945,
+      latitude: -7.7788728,
+      longitude: 110.3749968,
       zoom: 15,
       style: "mapbox://styles/mapbox/light-v10",
     },
