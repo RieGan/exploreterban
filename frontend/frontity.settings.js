@@ -5,8 +5,8 @@ const settings = {
   state: {
     frontity: {
       url: "https://byeol.my.id",
-      title: "KKN UGM",
-      description: "Website Desa Penari dari KKN UGM Yogyakarta 2021",
+      title: "Pesona UMKM Kelurahan Terban",
+      description: "Website UMKM Kelurahan Terban dari KKN UGM Yogyakarta 2021",
     },
     mapbox: {
       mapboxAccessToken: MAPBOX_ACCESS_TOKEN,
@@ -22,7 +22,7 @@ const settings = {
       state: {
         theme: {
           // The logo can be a text or an image url
-          logo: "Desa Penari",
+          logo: "UMKM Kelurahan Terban",
           // show background pattern
           showBackgroundPattern: true,
           // show social links
