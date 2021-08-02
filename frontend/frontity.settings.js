@@ -4,7 +4,7 @@ const settings = {
   name: "frontend",
   state: {
     frontity: {
-      url: "https://byeol.my.id",
+      url: "https://dashboardumkm.terban.id",
       title: "Pesona UMKM Kelurahan Terban",
       description: "Website UMKM Kelurahan Terban dari KKN UGM Yogyakarta 2021",
     },
@@ -83,7 +83,7 @@ const settings = {
       name: "@frontity/wp-source",
       state: {
         source: {
-          url: "https://byeol.my.id",
+          url: "https://dashboardumkm.terban.id",
           postTypes: [
             {
               type: "product", // type slug
