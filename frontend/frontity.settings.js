@@ -26,7 +26,7 @@ const settings = {
           // show background pattern
           showBackgroundPattern: true,
           // show social links
-          showSocialLinks: false,
+          showSocialLinks: true,
           // the top-level navigation labels and links
           menu: [
             ["Beranda", "/"],
@@ -37,10 +37,8 @@ const settings = {
           ],
           // the social links
           socialLinks: [
-            ["instagram", "https://www.instagram.com//"],
-            ["facebook", "https://www.facebook.com//"],
-            ["twitter", "https://www.twitter.com//"],
-            ["whatsApp", "https://wa.me/6289612345678"],
+            ["instagram", "https://instagram.com/kkn_gondokusuman2021"],
+            ["youtube", "https://www.youtube.com/channel/UCq4XzNbIvCWV0Bi-g2cPG2A"]
           ],
           // footer categories
           categories: [

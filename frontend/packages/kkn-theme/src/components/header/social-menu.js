@@ -6,6 +6,8 @@ import {
   IoLogoPinterest,
   IoLogoFacebook,
   IoLogoInstagram,
+  IoLogoYoutube,
+  IoLogoWhatsapp
 } from "react-icons/io";
 import Link from "../link";
 import StyleControl from "../constant/style-control";
@@ -24,9 +26,9 @@ export const SocialMenu = ({ menu, ...props }) => (
 
 const SocialMenuItem = ({ icon, label, link, ...props }) => (
   <Box
-    color={StyleControl.secondaryColor}
+    color={StyleControl.mainColor}
     transition="all 0.3s"
-    _hover={{ color: "white" }}
+    _hover={{color: StyleControl.secondaryColor}}
     as="li"
     listStyleType="none"
     margin="0"
@@ -44,6 +46,8 @@ const icons = {
   pinterest: IoLogoPinterest,
   facebook: IoLogoFacebook,
   instagram: IoLogoInstagram,
+  youtube: IoLogoYoutube,
+  whatsapp: IoLogoWhatsapp
 };
 
 const SocialNav = ({ menu, ...props }) => (

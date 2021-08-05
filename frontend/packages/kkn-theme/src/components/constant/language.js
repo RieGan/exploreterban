@@ -1,11 +1,11 @@
 export default {
   indonesian: {
     aboutUs:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer  took a galley of type and scrambled it to.",
+      "Kelurahan Terban adalah kelurahan yang terletak disisi sebelah utara Kota Yogyakarta berbatasan dengan Desa Caturtunggal, Sleman Yogyakarta. Terban memiliki banyak sekali potensi di bidang budaya dan UMKM",
     welcomeTitle: "Pesona UMKM Kelurahan Terban",
     welcomeCaption: "Produk UMKM yang berkualitas",
     welcomeAbout:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer  took a galley of type and scrambled it to.",
+      "Kelurahan Terban adalah kelurahan yang terletak disisi sebelah utara Kota Yogyakarta berbatasan dengan Desa Caturtunggal, Sleman Yogyakarta. Terban memiliki banyak sekali potensi di bidang budaya dan UMKM",
     desaName: "Kelurahan Terban",
   },
 };

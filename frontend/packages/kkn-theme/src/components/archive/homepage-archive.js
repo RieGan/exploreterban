@@ -20,7 +20,7 @@ import Link from "../link";
 import { BsArrowRight } from "react-icons/bs";
 
 const WelcomingStyle = {
-  background: `linear-gradient(90deg, ${StyleControl.mainColor} 1.02%, rgba(156, 156, 66, 0.2) 101.02%),url(${WelcomingBackground})`,
+  background: `linear-gradient(90deg, ${StyleControl.mainColor} 1.02%, rgba(156, 156, 66, 0.2) 101.02%),url(${WelcomingBackground}) center`,
   backgroundSize: "cover",
 };
 const AboutStyle = {
