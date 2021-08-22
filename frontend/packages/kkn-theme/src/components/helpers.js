@@ -180,7 +180,7 @@ const formatDay = (day) => {
 export function formatDate(date) {
   const jsDate = new Date(date);
   const day = jsDate.getDate();
-  const month = jsDate.getMonth() + 1;
+  const month = jsDate.getMonth();
   const year = jsDate.getFullYear();
 
   return `${day} ${monthNames[month]} ${year}`;
